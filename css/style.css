@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'raleeway-regular';
+    src: url("../fonts/Raleway-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'raleeway-italic';
+    src: url("../fonts/Raleway-Italic.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+    position: relative;
+}
+
+button{
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.d-f{
+    display: flex;
+}
+
+.ai-c{
+    align-items: center;
+}
+
+.jc-c{
+    justify-content: center;
+}
+
+.fd-c{
+    flex-direction: column;
+}
+
+.main{
+    height: 100vh;
+}
+
+.container{
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logo-main{
+    padding-top: 150px;
+    color: #53bc53;
+}
+
+.logo-main span{
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.logo-main h2{
+    letter-spacing: 0.5em;
+}
+
+.choose-program{
+    padding-top: 100px;
+}
+
+.choose-text h3{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.choose-button{
+    padding-top: 35px;
+}
+
+.choose-button .btn{
+    margin-bottom: 35px;
+}
+
+.btn{
+    background-color: #53bc53;
+    border-radius: 25px;
+    padding: 15px 125px;
+    max-width: 400px;
+    width: 100%;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.choose-button .btn:hover{
+    background-color: green;
+}
+
+.your-parameters{
+    padding-top: 150px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.your-parameters img{
+    width: 16px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+}
+
+.parameters-text{
+    margin-bottom: 150px;
+}
+
+.parameters-text p{
+    text-align: center;
+    font-style: italic;
+}
+
+.parameters-text h3{
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.gender{
+    margin-bottom: 20px;
+}
+
+.gender label{
+    position: relative;
+    margin-right: 15px;
+    color: #757575;
+    cursor: pointer;
+}
+
+#gender-man,
+#gender-woman{
+    margin-right: 10px;
+    height: 5px;
+}
+
+#gender-man:checked~.choose-man,
+#gender-woman:checked~.choose-woman{
+    color: #03a9f4;
+}
+
+#gender-man:checked~.choose-man:before,
+#gender-woman:checked~.choose-woman:before{
+    background-color: #03a9f4;
+}
+
+.choose-man:before{
+    position: absolute;
+    content: '';
+    mask: url('./../images/user-profile-svgrepo-com.svg');
+    -webkit-mask: url('./../images/user-profile-svgrepo-com.svg');
+}
+
+.choose-man:hover,
+.choose-woman:hover{
+    color: #03a9f4;
+}
+
+.choose-man:hover:before,
+.choose-woman:hover:before{
+    background-color: #03a9f4;
+}
+
+.choose-woman:before{
+    position: absolute;
+    content: '';
+    mask: url("./../images/user-female-svgrepo-com.svg");
+    -webkit-mask: url('./../images/user-female-svgrepo-com.svg');
+}
+
+.choose-woman:before,
+.choose-man:before{
+    height: 25px;
+    width: 25px;
+    top: -6px;
+    left: -32px;
+    background-size: 25px;
+    vertical-align: middle;
+    background-color: #757575;
+}
+
+.choose-parameters {
+    margin-bottom: 150px;
+}
+
+.btn-next{
+    width: auto;
+    max-width: none;
+    padding: 15px 50px;
+    margin-bottom: 80px;
+}
+
+.form-control{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    max-width: 500px;
+    padding: 15px 300px 5px 5px;
+    color: #9e9e9e;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media (max-width: 526px) {
+    .form-control{
+        padding: 15px 230px 5px 5px;
+    }
+
+    .your-parameters{
+        padding-top: 100px;
+    }
+
+    .parameters-text {
+        margin-bottom: 115px;
+    }
+}
+
+@media (max-width: 465px) {
+    .logo-main h2{
+        letter-spacing: 0.3em;
+    }
+
+    .choose-text h3{
+        font-size: 14px;
+    }
+
+    .choose-text p{
+        font-size: 14px;
+    }
+
+    .choose-button .btn{
+        max-width: 335px;
+        padding: 15px 95px;
+    }
+
+    .form-control{
+        padding: 15px 130px 5px 5px;
+    }
+
+    .gender {
+        margin-bottom: 10px;
+    }
+
+    #gender-man, #gender-woman {
+        margin-right: 5px;
+    }
+
+    .choose-woman:before, .choose-man:before{
+        width: 20px;
+        height: 20px;
+        top: -5px;
+        left: -26px;
+    }
+}
+
+@media (max-width: 365px) {
+    .choose-button .btn{
+        padding: 15px 70px;
+    }
+
+    .parameters-text {
+        margin-bottom: 80px;
+    }
+
+    .choose-parameters{
+        margin-bottom: 100px;
+    }
+
+    .form-control {
+        padding: 15px 100px 5px 5px;
+        font-size: 14px;
+    }
+}

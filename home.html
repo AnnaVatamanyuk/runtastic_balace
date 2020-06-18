@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=2.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Runtastic Balance</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/jquery.dateselect.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <script src="js/mobiscroll.javascript.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main">
+            <section class="choose-section">
+                <div class="container d-f fd-c ai-c">
+                    <div class="logo-main d-f ai-c fd-c">
+                    <span>runtastic</span>
+                    <h2>BALANCE</h2>
+                </div>
+                    <div class="choose-program d-f fd-c ai-c">
+                    <div class="choose-text d-f fd-c ai-c">
+                        <h3>Мы рады видеть тебя!</h3>
+                        <p>Чего ты хочешь достичь?</p>
+                    </div>
+                    <div class="choose-button d-f fd-c ai-c">
+                        <button id="lose-weight" class="btn nav-opener">Сбросить вес</button>
+                        <button id="To-gain_weight" class="btn nav-opener">Набрать вес</button>
+                        <button id="eat-right" class="btn nav-opener">Правильно питаться</button>
+                    </div>
+                </div>
+                </div>
+            </section>
+            <section class="your-parameters">
+                <img class="arrow-back" src="images/arrow-left-solid.svg" alt="image description">
+                <div class="container d-f fd-c ai-c">
+                    <div class="parameters-text">
+                        <h3>Достигаем цели вместе!</h3>
+                        <p>Начнём с простого</p>
+                    </div>
+                    <form class="choose-parameters d-f fd-c">
+                        <div class="gender">
+                            <input id="gender-man" type="radio" name="gender" value="man" checked="checked">
+                            <label class="choose-man" for="gender-man">Мужской</label>
+                            <input id="gender-woman" type="radio" name="gender" value="woman">
+                            <label class="choose-woman" for="gender-woman">Женский</label>
+                        </div>
+                         <label for="demo-mobile">
+                             <input  id="demo-mobile" data-input-style="box" class="form-control" placeholder="Дата рождения" />
+                         </label>
+                         <label for="number">
+                            <input id="number" class="form-control" placeholder="Рост">
+                         </label>
+                         <label for="demo">
+                            <input id="demo" class="form-control" placeholder="Текущий вес" />
+                         </label>
+                    </form>
+                    <div class="btn btn-next">Продолжить</div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery.dateselect.min.js"></script>
+</html>
