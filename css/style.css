@@ -54,6 +54,10 @@ a{
     flex-direction: column;
 }
 
+.jc-sb{
+    justify-content: space-between;
+}
+
 .main{
     height: 100vh;
 }
@@ -127,7 +131,7 @@ a{
     background-color: #fff;
 }
 
-.your-parameters img{
+.arrow-back{
     width: 16px;
     position: absolute;
     top: 15px;
@@ -303,4 +307,227 @@ a{
         padding: 15px 100px 5px 5px;
         font-size: 14px;
     }
+}
+
+/*Recommended calories page start*/
+
+.recommended-calories{
+    padding-top: 100px;
+}
+
+.recommended-title{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.recommended-text p:last-child{
+    font-weight: 600;
+    color: #332d2d;
+}
+
+.recommended-text{
+    margin-bottom: 80px ;
+}
+
+.count-calories{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 14px solid #53bc53;
+    margin-bottom: 150px;
+}
+
+.count-calories span{
+    font-weight: 600;
+}
+
+.count-calories span:first-child{
+    font-size: 30px;
+}
+
+.calories-text{
+    color: #8e8e8e;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.recommended-calories .btn-next{
+    margin-bottom: 20px;
+}
+/*Recommended calories page END*/
+
+/*Registration page start*/
+.choose-registration{
+    /*Тут нужно заменить на фоновые картинки*/
+    /*background-image: url("./../images/fitness1.jpg");*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    padding: 100px 0 50px;
+    background-color: #bcdeec;
+    height: 100vh;
+}
+
+.choose-registration .container{
+    height: 100%;
+}
+
+.logo-registration{
+    color: white;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.logo-adidas{
+    padding-right: 15px;
+    border-right: 2px solid #fff;
+}
+
+.logo-adidas img{
+    position: relative;
+    width: 75px;
+}
+
+.logo-adidas img:before{
+    content: 'adidas';
+    position: absolute;
+}
+
+.logo-title{
+    padding-left: 15px;
+}
+
+.logo-title span{
+    font-style: italic;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.logo-title h2{
+    letter-spacing: 5px;
+    font-size: 25px;
+}
+
+.registration-form .btn{
+    background-color: #fff;
+    color: #767676;
+    border:1px solid #aeaeae;
+    box-shadow: 0 0 5px #aeaeae;
+    text-align: center;
+    position: relative;
+}
+
+.social-google:before{
+    position: absolute;
+    content: url("./../images/google.svg");
+    width: 20px;
+    right: 58%;
+    top: 27%;
+}
+
+.social-google:hover{
+    background-color: #69B22C;
+    color: #fff;
+    font-size: 13px;
+}
+
+.registration-form .btn-next{
+    margin-bottom: 20px;
+}
+
+.registration-form .social-facebook{
+    color: #0276ce;
+}
+
+.social-facebook{
+    margin-right: 10px;
+}
+
+.social-facebook:before{
+    top: 26%;
+    position: absolute;
+    width: 14px;
+    content: url(./../images/facebook-f-brands.svg);
+    left: 16%;
+}
+
+.social-facebook:hover,
+.social-reg:hover{
+    background-color: #0276ce;
+    color: #fff;
+    font-size: 13px;
+}
+
+.social-facebook:hover:before{
+    content: url("./../images/facebook-active.svg");
+}
+
+.social-reg{
+    color: #0276ce;
+}
+
+.registration-text{
+    color: #fff;
+    font-size: 14px;
+}
+
+.registration-text span{
+    margin-right: 10px;
+}
+
+.registration-text a{
+    text-transform: uppercase;
+    color: #0276ce;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.registration-text a:hover{
+    font-size: 14px;
+}
+
+@media (max-width: 400px) {
+
+    .logo-adidas img {
+        position: relative;
+        width: 60px;
+    }
+
+    .logo-title span {
+        font-size: 14px;
+    }
+
+    .logo-title h2 {
+        font-size: 20px;
+    }
+
+    .registration-form .btn-next{
+        padding: 15px 30px;
+    }
+
+    .social-facebook:before {
+        top: 27%;
+        width: 12px;
+        left: 9%;
+    }
+
+    .social-google:before {
+        width: 17px;
+        right: 59%;
+    }
+}
+
+/*registration-popup start*/
+
+.registration-popup{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff
 }

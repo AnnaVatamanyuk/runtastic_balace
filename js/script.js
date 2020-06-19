@@ -1,16 +1,40 @@
-let parametersSection =document.querySelector('.your-parameters')
+// let parametersSection =document.querySelector('.your-parameters')
 
 jQuery('.nav-opener').click(function () {
     jQuery('.your-parameters').show()
 })
 
-document.querySelector('.form-control').addEventListener('click', function () {
-    document.querySelector('.form-control').placeholder = '';
+jQuery('.form-control').click(function () {
+    jQuery('.form-control').attr('placeholder', '')
 })
 
-document.querySelector('.arrow-back').addEventListener('click',function () {
-    parametersSection.style.display = 'none';
+jQuery('.arrow-back').click(function () {
+    jQuery('.your-parameters').hide()
 })
+
+jQuery('.arrow-btn_style').click(function () {
+    jQuery('.your-parameters').show()
+})
+
+jQuery('.social-reg').click(function () {
+    jQuery('.registration-popup').show()
+})
+// document.querySelector('.form-control').addEventListener('click', function () {
+//     document.querySelector('.form-control').placeholder = '';
+// })
+
+// document.querySelector('.arrow-back').addEventListener('click',function () {
+//     parametersSection.style.display = 'none';
+// })
+
+// document.querySelector('.arrow-btn_style').addEventListener('click',function () {
+//     parametersSection.style.display = 'block';
+// })
+
+// document.querySelector('.social-reg').addEventListener('click', function () {
+//     document.querySelector('.registration-popup').style.display = 'block'
+// })
+
 
 window.isMbscDemo = true;
 
