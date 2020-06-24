@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=2.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Runtastic Balance</title>
+    <link href="./../css/style.css" type="text/css" rel="stylesheet">
+    <link href="./../css/jquery.dateselect.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./../css/mobiscroll.javascript.min.css">
+    <script src="./../js/mobiscroll.javascript.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <section class="tab-section">
+        <div class="container">
+            <div id="tabs-block_holder" class="d-f jc-c">
+                <div class="tab-fixed">
+                    <ul class="tabs-list d-f ai-c">
+                        <li >
+                            <a class="d-f fd-c ai-c active-tab" href="#news"><img src="./../images/newspaper-regular.svg" alt="image descrition">Новости</a>
+                        </li>
+                        <li>
+                            <a href="#magazine" class="d-f fd-c ai-c"><img src="./../images/book.svg" alt="image descrition">Журнал</a>
+                        </li>
+                        <li>
+                            <a href="#add-program" class="add-program d-f ai-c jc-c"><img src="./../images/plus-solid.svg" alt="image descrition"></a>
+                        </li>
+                        <li>
+                            <a href="#programs" class="d-f fd-c ai-c"><img src="./../images/clipboard-list-solid.svg" alt="image descrition">Программы</a>
+                        </li>
+                        <li>
+                            <a href="#profile" class="d-f fd-c ai-c"><img src="./../images/user-profile-svgrepo-com.svg" alt="image descrition">Профиль</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tabs-block">
+                    <div id="news" class="tab-holder">
+                        <div class="tab-background d-f ai-c">
+                            <p>Новости</p>
+                            <img src="./../images/user-plus-solid.svg" alt="image description">
+                        </div>
+                        <div class="news-block">
+                            <div class="logo-news d-f ai-c">
+                                <div class="logo-news"><img src="./../images/logo-news.png" alt="images description"></div>
+                                <p>Runtastic</p>
+                            </div>
+                            <div class="img-holder img-holder_text"></div>
+                            <div class="news-text">
+                                <p>Новостная лента станет интереснее, если ты добавишь друзей. Ставь лайки и оставляй коментарии к тренировкам.
+                                    Радуйся успехам в спорте вместе с друзьями и вдохновляй их на рекорды!</p>
+                                <span class="">Найти друзей</span>
+                            </div>
+                        </div>
+                        <div class="news-block">
+                            <div class="logo-news d-f ai-c">
+                                <div class="logo-news"><img src="./../images/logo-news.png" alt="images description"></div>
+                                <p>Runtastic</p>
+                            </div>
+                            <div class="img-holder"></div>
+                            <div class="news-text">
+                                <h3>13 Foods You Should Always Have (+Healthy Shopping List)</h3>
+                                <p>Filling your kitchen with healthy ingredients makes it easier to maintain a nutritious diet. Check out our 13 must-have!</p>
+                                <span class="">See the list</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="magazine" class="tab-holder d-f fw-w ">
+                        <div id="tabs-days">
+                            <div class="tabs-days_fixed">
+                                <div class="container d-f jc-sb">
+                                    <h3>Журнал</h3>
+                                    <img src="./../images/calendar-alt-regular.svg" alt="image description">
+                                </div>
+                                <ul class="container tabs-list d-f ai-c">
+                                    <li><a href="#before-yesterday">сб, 13 июн.</a></li>
+                                    <li><a href="#yesterday">Вчера</a></li>
+                                    <li><a class="active-tab_day" href="#today">Сегодня</a></li>
+                                    <li><a href="#tomorrow">Завтра</a></li>
+                                    <li><a href="#after-tomorrow">ср, 17июн.</a></li>
+                                </ul>
+                            </div>
+                            <div class="container tabs-block">
+                                <div id="before-yesterday" class="tab-holder">
+                                    <div class="d-f ai-c fd-c jc-c">
+                                        <div class="calories-left d-f fd-c ai-c jc-c">
+                                            <p>2646</p>
+                                            <span>Осталось калорий</span>
+                                        </div>
+                                        <div class="norms-calories d-f jc-sb ai-c">
+                                            <div class="carbohydrates d-f fd-c">
+                                                <div class="carbohydrates-text">
+                                                    <p>Углеводы</p>
+                                                    <span class="used-calories">0г</span><span> / 364г</span>
+                                                </div>
+                                                <input type="range" min="0" max="364" step="1">
+                                            </div>
+                                            <div class="fat d-f fd-c">
+                                                <div class="fat-text">
+                                                    <p>Белки</p>
+                                                    <span class="used-calories">0г</span><span> / 99г</span>
+                                                </div>
+                                                <input type="range" min="0" max="99" step="1">
+                                            </div>
+                                            <div class="proteins d-f fd-c">
+                                                <div class="proteins-text">
+                                                    <p>Жиры</p>
+                                                    <span class="used-calories">0г</span><span> / 88г</span>
+                                                </div>
+                                                <input type="range" min="0" max="88" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="schedule-eat">
+                                            <ul>
+                                                <li class="breakfast d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Завтрак</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <a href="#">
+                                                            <a href="choose-eat.html"><img src="./../images/plus-solid.svg" alt="image description"></a>
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="lunch d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Обед</h3>
+                                                        <p>Для тебя оптимально 794-1059 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <a href="choose-eat.html"><img src="./../images/plus-solid.svg" alt="image description"></a>
+                                                    </div>
+                                                </li>
+                                                <li class="dinner d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Ужин</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <a href="choose-eat.html"><img src="./../images/plus-solid.svg" alt="image description"></a>
+                                                    </div>
+                                                </li>
+                                                <li class="snack d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Перекус</h3>
+                                                        <p>Для тебя оптимально 0-529 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <a href="choose-eat.html"><img src="./../images/plus-solid.svg" alt="image description"></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="calories-burned">
+                                            <h3>Потраченые калории</h3>
+                                            <span>0 калорий</span>
+                                            <p>Тренируйся вместе с приложениями Runtastic или добавляй активность вручную, чтобы позволить себе больше калорий!</p>
+                                            <div class="choose-workout">
+                                                <p>Добавить тренировку</p>
+                                            </div>
+                                        </div>
+                                        <div class="purpose">
+                                            <h3>Цель</h3>
+                                            <p>Правильно питаться</p>
+                                            <div class="d-f">
+                                                <div class="current-weight">
+                                                    <p>Текущий</p>
+                                                    <span>75</span>
+                                                </div>
+                                                <div class="desired-weight">
+                                                    <p>Цель</p>
+                                                    <span>75</span>
+                                                </div>
+                                            </div>
+                                            <p>Вес в кг</p>
+                                            <button class="btn">Обновить вес</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="yesterday" class="tab-holder">
+                                    <div class="d-f ai-c fd-c jc-c">
+                                        <div class="calories-left d-f fd-c ai-c jc-c">
+                                            <p>2646</p>
+                                            <span>Осталось калорий</span>
+                                        </div>
+                                        <div class="norms-calories d-f jc-sb ai-c">
+                                            <div class="carbohydrates d-f fd-c">
+                                                <div class="carbohydrates-text">
+                                                    <p>Углеводы</p>
+                                                    <span class="used-calories">0г</span><span> / 364г</span>
+                                                </div>
+                                                <input type="range" min="0" max="364" step="1">
+                                            </div>
+                                            <div class="fat d-f fd-c">
+                                                <div class="fat-text">
+                                                    <p>Белки</p>
+                                                    <span class="used-calories">0г</span><span> / 99г</span>
+                                                </div>
+                                                <input type="range" min="0" max="99" step="1">
+                                            </div>
+                                            <div class="proteins d-f fd-c">
+                                                <div class="proteins-text">
+                                                    <p>Жиры</p>
+                                                    <span class="used-calories">0г</span><span> / 88г</span>
+                                                </div>
+                                                <input type="range" min="0" max="88" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="schedule-eat">
+                                            <ul>
+                                                <li class="breakfast d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Завтрак</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="lunch d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Обед</h3>
+                                                        <p>Для тебя оптимально 794-1059 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="dinner d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Ужин</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="snack d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Перекус</h3>
+                                                        <p>Для тебя оптимально 0-529 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="calories-burned">
+                                            <h3>Потраченые калории</h3>
+                                            <span>0 калорий</span>
+                                            <p>Тренируйся вместе с приложениями Runtastic или добавляй активность вручную, чтобы позволить себе больше калорий!</p>
+                                            <div class="choose-workout">
+                                                <p>Добавить тренировку</p>
+                                            </div>
+                                        </div>
+                                        <div class="purpose">
+                                            <h3>Цель</h3>
+                                            <p>Правильно питаться</p>
+                                            <div class="d-f">
+                                                <div class="current-weight">
+                                                    <p>Текущий</p>
+                                                    <span>75</span>
+                                                </div>
+                                                <div class="desired-weight">
+                                                    <p>Цель</p>
+                                                    <span>75</span>
+                                                </div>
+                                            </div>
+                                            <p>Вес в кг</p>
+                                            <button class="btn">Обновить вес</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="today" class="tab-holder">
+                                    <div class="d-f ai-c fd-c jc-c">
+                                        <div class="calories-left d-f fd-c ai-c jc-c">
+                                            <p>2646</p>
+                                            <span>Осталось калорий</span>
+                                        </div>
+                                        <div class="norms-calories d-f jc-sb ai-c">
+                                            <div class="carbohydrates d-f fd-c">
+                                                <div class="carbohydrates-text">
+                                                    <p>Углеводы</p>
+                                                    <span class="used-calories">0г</span><span> / 364г</span>
+                                                </div>
+                                                <input type="range" min="0" max="364" step="1">
+                                            </div>
+                                            <div class="fat d-f fd-c">
+                                                <div class="fat-text">
+                                                    <p>Белки</p>
+                                                    <span class="used-calories">0г</span><span> / 99г</span>
+                                                </div>
+                                                <input type="range" min="0" max="99" step="1">
+                                            </div>
+                                            <div class="proteins d-f fd-c">
+                                                <div class="proteins-text">
+                                                    <p>Жиры</p>
+                                                    <span class="used-calories">0г</span><span> / 88г</span>
+                                                </div>
+                                                <input type="range" min="0" max="88" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="schedule-eat">
+                                            <ul>
+                                                <li class="breakfast d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Завтрак</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="lunch d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Обед</h3>
+                                                        <p>Для тебя оптимально 794-1059 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="dinner d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Ужин</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="snack d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Перекус</h3>
+                                                        <p>Для тебя оптимально 0-529 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="calories-burned">
+                                            <h3>Потраченые калории</h3>
+                                            <span>0 калорий</span>
+                                            <p>Тренируйся вместе с приложениями Runtastic или добавляй активность вручную, чтобы позволить себе больше калорий!</p>
+                                            <div class="choose-workout">
+                                                <p>Добавить тренировку</p>
+                                            </div>
+                                        </div>
+                                        <div class="purpose">
+                                            <h3>Цель</h3>
+                                            <p>Правильно питаться</p>
+                                            <div class="d-f">
+                                                <div class="current-weight">
+                                                    <p>Текущий</p>
+                                                    <span>75</span>
+                                                </div>
+                                                <div class="desired-weight">
+                                                    <p>Цель</p>
+                                                    <span>75</span>
+                                                </div>
+                                            </div>
+                                            <p>Вес в кг</p>
+                                            <button class="btn">Обновить вес</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tomorrow" class="tab-holder">
+                                    <div class="d-f ai-c fd-c jc-c">
+                                        <div class="calories-left d-f fd-c ai-c jc-c">
+                                            <p>2646</p>
+                                            <span>Осталось калорий</span>
+                                        </div>
+                                        <div class="norms-calories d-f jc-sb ai-c">
+                                            <div class="carbohydrates d-f fd-c">
+                                                <div class="carbohydrates-text">
+                                                    <p>Углеводы</p>
+                                                    <span class="used-calories">0г</span><span> / 364г</span>
+                                                </div>
+                                                <input type="range" min="0" max="364" step="1">
+                                            </div>
+                                            <div class="fat d-f fd-c">
+                                                <div class="fat-text">
+                                                    <p>Белки</p>
+                                                    <span class="used-calories">0г</span><span> / 99г</span>
+                                                </div>
+                                                <input type="range" min="0" max="99" step="1">
+                                            </div>
+                                            <div class="proteins d-f fd-c">
+                                                <div class="proteins-text">
+                                                    <p>Жиры</p>
+                                                    <span class="used-calories">0г</span><span> / 88г</span>
+                                                </div>
+                                                <input type="range" min="0" max="88" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="schedule-eat">
+                                            <ul>
+                                                <li class="breakfast d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Завтрак</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="lunch d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Обед</h3>
+                                                        <p>Для тебя оптимально 794-1059 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="dinner d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Ужин</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="snack d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Перекус</h3>
+                                                        <p>Для тебя оптимально 0-529 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="calories-burned">
+                                            <h3>Потраченые калории</h3>
+                                            <span>0 калорий</span>
+                                            <p>Тренируйся вместе с приложениями Runtastic или добавляй активность вручную, чтобы позволить себе больше калорий!</p>
+                                            <div class="choose-workout">
+                                                <p>Добавить тренировку</p>
+                                            </div>
+                                        </div>
+                                        <div class="purpose">
+                                            <h3>Цель</h3>
+                                            <p>Правильно питаться</p>
+                                            <div class="d-f">
+                                                <div class="current-weight">
+                                                    <p>Текущий</p>
+                                                    <span>75</span>
+                                                </div>
+                                                <div class="desired-weight">
+                                                    <p>Цель</p>
+                                                    <span>75</span>
+                                                </div>
+                                            </div>
+                                            <p>Вес в кг</p>
+                                            <button class="btn">Обновить вес</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="after-tomorrow" class="tab-holder">
+                                    <div class="d-f ai-c fd-c jc-c">
+                                        <div class="calories-left d-f fd-c ai-c jc-c">
+                                            <p>2646</p>
+                                            <span>Осталось калорий</span>
+                                        </div>
+                                        <div class="norms-calories d-f jc-sb ai-c">
+                                            <div class="carbohydrates d-f fd-c">
+                                                <div class="carbohydrates-text">
+                                                    <p>Углеводы</p>
+                                                    <span class="used-calories">0г</span><span> / 364г</span>
+                                                </div>
+                                                <input type="range" min="0" max="364" step="1">
+                                            </div>
+                                            <div class="fat d-f fd-c">
+                                                <div class="fat-text">
+                                                    <p>Белки</p>
+                                                    <span class="used-calories">0г</span><span> / 99г</span>
+                                                </div>
+                                                <input type="range" min="0" max="99" step="1">
+                                            </div>
+                                            <div class="proteins d-f fd-c">
+                                                <div class="proteins-text">
+                                                    <p>Жиры</p>
+                                                    <span class="used-calories">0г</span><span> / 88г</span>
+                                                </div>
+                                                <input type="range" min="0" max="88" step="1">
+                                            </div>
+                                        </div>
+                                        <div class="schedule-eat">
+                                            <ul>
+                                                <li class="breakfast d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Завтрак</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="lunch d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Обед</h3>
+                                                        <p>Для тебя оптимально 794-1059 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="dinner d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Ужин</h3>
+                                                        <p>Для тебя оптимально 662-926 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                                <li class="snack d-f jc-sb ai-c">
+                                                    <div class="schedule-eat_text">
+                                                        <h3>Перекус</h3>
+                                                        <p>Для тебя оптимально 0-529 калорий</p>
+                                                    </div>
+                                                    <div class="add-eat">
+                                                        <img src="./../images/plus-solid.svg" alt="image description">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="calories-burned">
+                                            <h3>Потраченые калории</h3>
+                                            <span>0 калорий</span>
+                                            <p>Тренируйся вместе с приложениями Runtastic или добавляй активность вручную, чтобы позволить себе больше калорий!</p>
+                                            <div class="choose-workout">
+                                                <p>Добавить тренировку</p>
+                                            </div>
+                                        </div>
+                                        <div class="purpose">
+                                            <h3>Цель</h3>
+                                            <p>Правильно питаться</p>
+                                            <div class="d-f">
+                                                <div class="current-weight">
+                                                    <p>Текущий</p>
+                                                    <span>75</span>
+                                                </div>
+                                                <div class="desired-weight">
+                                                    <p>Цель</p>
+                                                    <span>75</span>
+                                                </div>
+                                            </div>
+                                            <p>Вес в кг</p>
+                                            <button class="btn">Обновить вес</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="add-program" class="tab-holder d-f fw-w ">
+                        fghdfg
+                    </div>
+                    <div id="programs" class="tab-holder d-f fw-w ">
+                        fgjdghjgh
+                    </div>
+                    <div id="profile" class="tab-holder d-f fw-w ">
+                        gdkjkjhk
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="./../js/jquery-1.12.4.js"></script>
+<script src="./../js/jquery-ui.js"></script>
+<script src="./../js/script.js"></script>
+<script src="./../js/jquery.dateselect.min.js"></script>
+</body>
+</html>

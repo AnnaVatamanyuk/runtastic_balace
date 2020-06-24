@@ -28,7 +28,7 @@
                 </div>
                 <div class="d-f">
                     <div class="btn-next btn social-facebook">
-                        <a href="#">Продолжить</a>
+                        <a class="fb_login_btn" onclick="fb_login();return false;">Продолжить</a>
                     </div>
                     <div class="btn btn-next social-reg">
                         <a  href="#">Регистрация</a>
@@ -42,24 +42,47 @@
         </div>
     </section>
     <section class="registration-popup">
-        <div class="registration-popup_title">
+        <div class="registration-popup_title d-f ai-c">
+            <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
             <p>Регистрация</p>
         </div>
-        <form>
-            <div class="personal-data">
-                <div class="registration-photo">
-                    <input type="image">
+        <div class="container">
+            <form class="d-f fd-c ai-c jc-sb form-authorization">
+                <div>
+                    <div class="personal-data d-f jc-c ai-c">
+                        <div class="registration-photo">
+                            <img id="blah" src="" width="50px" height="50px" />
+                            <input type="file" name="AddImage" id="AddImage" accept="image/*" />
+                            <label for="AddImage"><img src="./../images/camera-solid.svg" alt="images description"></label>
+                        </div>
+                        <div class="registration-name d-f fd-c">
+                            <input class="form-control" id="name" type="text" required placeholder="Имя">
+                            <span class="error-name">(Введите имя от 2 до 40 букв)</span>
+                            <input class="form-control" id="first-name" type="text" required placeholder="Фамилия">
+                            <span class="error-first_name">(Введите фамилию от 2 до 40 букв)</span>
+                        </div>
+                    </div>
+                    <div class="registration-auth_data d-f fd-c">
+                        <input id="email" class="form-control email" type="email" placeholder="Email" required>
+                        <span class="error-email">(Введите email)</span>
+                        <input  id="password" class="form-control password" type="password" required placeholder="Пароль">
+                        <span class="error-password">(Пароль должен быть больше 8-ми символов, должна быть цифра, буква, большая буква)</span>
+                    </div>
                 </div>
-                <div class="registration-name">
-                    <input type="text">
-                    <input type="text">
-                </div>
-            </div>
-            <div class="registration-auth_data">
-                <input type="email">
-                <input type="password">
-            </div>
-        </form>
+                <button class="btn btn-next submit" type="submit"><a href="./recommended.html">Продолжить</a></button>
+            </form>
+        </div>
+    </section>
+    <section class="authorization-popup">
+        <div class="container">
+            <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
+            <form class="d-f fd-c ai-c jc-c">
+                <input class="form-control email" type="email" placeholder="E-mail" required>
+                <input class="form-control password" type="password" placeholder="Пароль" required>
+                <button class="btn submit" type="submit">Логин</button>
+                <a href="#">Не помниш пароль?</a>
+            </form>
+        </div>
     </section>
 </div>
 <script src="./../js/jquery-1.12.4.js"></script>
