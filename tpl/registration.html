@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Runtastic Balance</title>
     <link href="./../css/style.css" type="text/css" rel="stylesheet">
-    <link href="./../css/jquery.dateselect.css" rel="stylesheet" type="text/css">
-    <script src="./../js/mobiscroll.javascript.min.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -28,7 +26,7 @@
                 </div>
                 <div class="d-f">
                     <div class="btn-next btn social-facebook">
-                        <a class="fb_login_btn" onclick="fb_login();return false;">Продолжить</a>
+                        <a class="fb-login_btn">Продолжить</a>
                     </div>
                     <div class="btn btn-next social-reg">
                         <a  href="#">Регистрация</a>
@@ -69,7 +67,7 @@
                         <span class="error-password">(Пароль должен быть больше 8-ми символов, должна быть цифра, буква, большая буква)</span>
                     </div>
                 </div>
-                <button class="btn btn-next submit" type="submit"><a href="./recommended.html">Продолжить</a></button>
+                <button class="btn btn-next submit" type="submit"><a href="./home.html">Продолжить</a></button>
             </form>
         </div>
     </section>
@@ -79,15 +77,15 @@
             <form class="d-f fd-c ai-c jc-c">
                 <input class="form-control email" type="email" placeholder="E-mail" required>
                 <input class="form-control password" type="password" placeholder="Пароль" required>
-                <button class="btn submit" type="submit">Логин</button>
+                <a class="btn submit" type="submit" href="home.html">Логин</a>
                 <a href="#">Не помниш пароль?</a>
             </form>
         </div>
     </section>
 </div>
+<script src="https://apis.google.com/js/client.js?onload=authorize"></script>
 <script src="./../js/jquery-1.12.4.js"></script>
 <script src="./../js/jquery-ui.js"></script>
 <script src="./../js/script.js"></script>
-<script src="./../js/jquery.dateselect.min.js"></script>
 </body>
 </html>

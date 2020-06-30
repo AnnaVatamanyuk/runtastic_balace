@@ -4,22 +4,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'raleeway-regular';
-    src: url("../fonts/Raleway-Regular.ttf") format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'raleeway-italic';
-    src: url("../fonts/Raleway-Italic.ttf") format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 body{
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -63,6 +47,10 @@ ul{
     justify-content: space-between;
 }
 
+.jc-fe{
+    justify-content: flex-end;
+}
+
 .main{
     height: 100vh;
 }
@@ -86,7 +74,7 @@ ul{
 }
 
 .logo-main{
-    padding-top: 150px;
+    padding-top: 100px;
     color: #53bc53;
 }
 
@@ -138,7 +126,7 @@ ul{
 }
 
 .your-parameters{
-    padding-top: 150px;
+    padding-top: 100px;
     background-color: #fff;
 }
 
@@ -248,6 +236,91 @@ ul{
     font-weight: 600;
 }
 
+.modal-data-birthday,
+.modal-data-height,
+.modal-data-weight{
+    display: none;
+}
+
+.overlay{
+    background: #fff;
+    width: 300px;
+    /*height: 200px;*/
+    box-shadow: 0 0 5px;
+    position: absolute;
+    left: 38%;
+}
+
+.modal-data{
+    padding: 15px;
+}
+
+.modal-data p{
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.modal-data input,
+.modal-data-main{
+    margin-bottom: 25px;
+}
+
+.modal-data input,
+.modal-data-main select{
+    border: none;
+    border-top: 2px solid #53bc53;
+    border-bottom: 2px solid #53bc53;
+    padding: 10px;
+    align-self: center;
+    outline: none;
+    background: transparent;
+}
+
+.modal-data-main select option{
+    outline: none;
+}
+
+.modal-data-main select{
+    margin-right: 10px;
+}
+
+.box-confirm-birthday,
+.box-confirm-height,
+.box-confirm-weight{
+    margin-bottom: 10px;
+}
+
+.button-cancel{
+    margin-right: 10px;
+}
+
+.button-cancel:hover{
+    color: #990000;
+}
+
+.button-confirm:hover{
+    color: #53bc53;
+}
+
+.button-form{
+    background: transparent;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .overlay{
+        left: 30%;
+    }
+}
+
+@media (max-width: 600px) {
+    .overlay{
+        left: 22%;
+    }
+}
+
 @media (max-width: 526px) {
     .form-control{
         width: 430px;
@@ -263,6 +336,11 @@ ul{
 }
 
 @media (max-width: 465px) {
+
+        .overlay{
+            left: 16%;
+        }
+
     .logo-main h2{
         letter-spacing: 0.3em;
     }
@@ -300,6 +378,12 @@ ul{
     }
 }
 
+@media (max-width: 400px) {
+    .overlay{
+        width: 250px;
+    }
+}
+
 @media (max-width: 365px) {
     .choose-button .btn{
         padding: 15px 70px;
@@ -316,6 +400,12 @@ ul{
     .form-control {
         width: 300px;
         font-size: 14px;
+    }
+}
+
+@media (max-width: 340px) {
+    .overlay{
+        left: 12%;
     }
 }
 
@@ -339,7 +429,7 @@ ul{
 }
 
 .recommended-text{
-    margin-bottom: 80px ;
+    margin-bottom: 50px ;
 }
 
 .count-calories{
@@ -371,11 +461,10 @@ ul{
 
 /*Registration page start*/
 .choose-registration{
-    /*Тут нужно заменить на фоновые картинки*/
-    /*background-image: url("./../images/fitness1.jpg");*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: center;*/
+    background-image: url("./../images/index-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 100px 0 50px;
     background-color: #bcdeec;
     height: 100vh;
@@ -426,7 +515,6 @@ ul{
     background-color: #fff;
     color: #767676;
     border:1px solid #aeaeae;
-    box-shadow: 0 0 5px #aeaeae;
     text-align: center;
     position: relative;
     width: auto;
@@ -556,7 +644,7 @@ ul{
 }
 
 .registration-popup .form-control{
-    color: #dad5d5;
+    color: #000;
     font-size: 14px;
     font-style: italic;
 }
@@ -697,7 +785,10 @@ ul{
 
 .authorization-popup{
     padding: 50px 0;
-    background-color: rgb(190, 216, 234);
+    background-image:url("./../images/index-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .authorization-popup .form-control{
@@ -716,6 +807,7 @@ ul{
 }
 
 .authorization-popup .btn{
+    text-align: center;
     margin-bottom: 10px;
     max-width: 500px;
     background-color: #0276ce;
@@ -723,7 +815,7 @@ ul{
 
 .authorization-popup .btn:hover{
     background-color: #fff;
-    color: #0276ce;
+    color: #000;
 }
 
 .authorization-popup a{
@@ -770,7 +862,7 @@ ul{
     margin-bottom: 5px;
 }
 
-.tabs-list a{
+.tabs-list{
     color: #9e9e9e;
 }
 
@@ -785,7 +877,7 @@ ul{
     margin-bottom: 0;
 }
 
-.tabs-list .active-tab{
+.tabs-list .ui-tabs-active{
     color: #69B22C;
 }
 
@@ -887,7 +979,7 @@ ul{
     color:#acdeac;
 }
 
-.tabs-days_fixed .tabs-list .active-tab_day{
+.tabs-days_fixed .tabs-list .ui-tabs-active a{
     color: #fff;
 }
 
@@ -1508,3 +1600,29 @@ input[type='range']:last-child{
         font-size: 12px;
     }
 }
+
+.circliful {
+    position: relative;
+}
+
+.circle-text, .circle-info, .circle-text-half, .circle-info-half {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+}
+
+.circle-info, .circle-info-half {
+    color: #999;
+}
+
+.circliful .fa {
+    margin: -10px 3px 0 3px;
+    position: relative;
+    bottom: 4px;
+}
+
+.circle-container{
+    margin-bottom: 25px;
+}
+
