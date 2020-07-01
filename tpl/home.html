@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Runtastic Balance</title>
     <link href="./../css/style.css" type="text/css" rel="stylesheet">
+    <link href="./../css/slick.css" type="text/css" rel="stylesheet">
+    <link href="./../css/slick-theme.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
@@ -559,11 +561,171 @@
                         </div>
                     </div>
                     <div id="add-program" class="tab-holder d-f fw-w "></div>
-                    <div id="programs" class="tab-holder d-f fw-w ">
-                        fgjdghjgh
+                    <div id="programs" class="tab-holder d-f fd-c fw-w ">
+                        <div class="tab-background d-f ai-c">
+                            <p>Программа</p>
+                        </div>
+                        <div class="good-balance ">
+                            <div class="container">
+                                <h3>Здоровый баланс</h3>
+                                <div class="good-balance_text d-f fd-c">
+                                    <span>Начало программы 15 июня 2020г.</span>
+                                    <span>Пропорции макроэлементов</span>
+                                </div>
+                                <div class="diagram d-f ai-c">
+                                    <canvas id="myCanvas"></canvas>
+                                    <div id="myLegend"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="path-to-success">
+                            <div class="container">
+                                <h3>Твой путь к успеху</h3>
+                                <p>Ключ к здоровому образу жизни - оптимальный баланс. Питайтесь регулярно - это поможет тебе контролировать голод и сократить лишний вес.
+                                    Натуральные продукты без обработки могут полностью обезпечить твой рацион. Питайся сезонными продуктам, характерными для твоей местности, чтобы дополнить рацион свежими, яркими вкусами</p>
+                                <p>Сложные углеводы, вроде цельнозерновых продуктов и бобовых, помогут тебе ощутить сытость и дарят организму полезную клетчатку. Качественные белки из нежирного мяса,
+                                    яиц, молочных продуктов и бобовых помогут зарядить мышцы. Растительное масло, авокадо и орехи позволят телу насытитца полезными жирными кислотами. Свежие овощи и фрукты дополнят рацион и привнесут цвет и вкус любому блюду.</p>
+                                <p>Слудует выпивать по 1.5-2 л безкалорийной житкости в день(воды или чая без сахара). Также следует пить больше, когдатвоя тренировка длится более часа - выпей 0.5-1 л воды сверх нормы, чтобы компенсировать потери.</p>
+                            </div>
+                        </div>
+                        <div class="your-choose">
+                            <div class="container">
+                                <h3>Твой выбор</h3>
+                                <p>10 лучших продуктов:</p>
+                                <ul class="categories-product d-f jc-sb">
+                                    <li class="d-f fd-c ai-c">
+                                        <div class="product-img"><img src="./../images/food-vagatable.jpg" alt="image direction"></div>
+                                        <p>Фруктыи овощи</p>
+                                    </li>
+                                    <li class="d-f fd-c ai-c">
+                                        <div class="product-img"><img src="./../images/food-chicken.jpg" alt="image direction"></div>
+                                        <p>Курица</p>
+                                    </li>
+                                    <li class="d-f fd-c ai-c">
+                                        <div class="product-img"><img src="./../images/food-fish.jpg" alt="image direction"></div>
+                                        <p>Рыба</p>
+                                    </li>
+                                    <li class="d-f fd-c ai-c">
+                                        <div class="product-img"><img src="./../images/food-yogurt.jpg" alt="image direction"></div>
+                                        <p>Белый йогурт</p>
+                                    </li>
+                                    <li class="d-f fd-c ai-c">
+                                        <div class="product-img"><img src="./../images/food-eggs.jpg" alt="image direction"></div>
+                                        <p>Яйца</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="good-bad-product">
+                            <div class="container">
+                                <p>Больше этих продуктов</p>
+                                <ul class="good-product">
+                                    <li>Фрукты</li>
+                                    <li>Овощи</li>
+                                    <li>Бобовые</li>
+                                    <li>Цельнозерновые продукты</li>
+                                    <li>Молочные продукты</li>
+                                    <li>Нежирное мясо</li>
+                                    <li>Рыба</li>
+                                    <li>Яйца</li>
+                                    <li>Орежи и семена</li>
+                                    <li>Масла(льняное и оливковое)</li>
+                                </ul>
+                                <p>Меньше этих продуктов</p>
+                                <ul class="bad-product">
+                                    <li>Выпечка из белой муки</li>
+                                    <li>Сладкое</li>
+                                    <li>Жареное</li>
+                                    <li>Фастфуд</li>
+                                    <li>Газированные напитки</li>
+                                    <li>Фруктовые соки</li>
+                                    <li>Алкоголь</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="additional-programs">
+                            <div class="container">
+                                <h3>Дополнительные программы</h3>
+                                <div class=" center">
+                                    <div class="slide slide-2">
+                                        <div class="slide-img">
+                                            <img src="./../images/programm-foto2.jpg" alt="image description">
+                                        </div>
+                                        <h4>Персональная програма</h4>
+                                        <p>Настрой дневную норму потребления калорий и соотношения макроэлементов</p>
+                                    </div>
+                                    <div class="slide slide-1">
+                                        <div class="slide-img">
+                                            <img src="./../images/food-fish.jpg" alt="image description">
+                                        </div>
+                                        <h4>Улутшенная кето программа</h4>
+                                        <p>Настрой дневную норму потребления калорий и соотношения макроэлементов</p>
+                                    </div>
+                                    <div class="slide slide-3">
+                                        <div class="slide-img">
+                                            <img src="./../images/food-yogurt.jpg" alt="image description">
+                                        </div>
+                                        <h4>Правильное питание</h4>
+                                        <p>Настрой дневную норму потребления калорий и соотношения макроэлементов</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="profile" class="tab-holder d-f fw-w ">
-                        gdkjkjhk
+                        <div class="tab-background d-f ai-c">
+                            <p>Профиль</p>
+                            <img class="settings" src="./../images/cog-solid.svg" alt="image description">
+                        </div>
+                        <div class="settings-menu">
+                            <div class="tab-background d-f ai-c">
+                                <p>Настройки</p>
+                            </div>
+                            <div class="settings-profile">
+                                <h4>Личные настройки</h4>
+                                <ul>
+                                    <li><a href="#">
+                                        <img src="./../images/user-solid.svg" alt="image description">
+                                        Профиль
+                                    </a></li>
+                                    <li><a href="#">
+                                        <img src="./../images/ruler-vertical-solid.svg" alt="image description">
+                                        Единицы измерения
+                                    </a></li>
+                                    <li><a href="#">
+                                        <img src="./../images/bell-solid.svg" alt="image description">
+                                        Увидомления
+                                    </a></li>
+                                    <li><a href="#">
+                                        <img src="./../images/key-solid.svg" alt="image description">
+                                        Конфиденциальность
+                                    </a></li>
+                                </ul>
+                            </div>
+                            <div class="settings-profile">
+                                <h4>Дополнительно</h4>
+                                <ul>
+                                    <li><a href="#">
+                                        <img src="./../images/runtasting-settings.png" alt="image description">
+                                        Runtastic
+                                    </a></li>
+                                    <li><a href="#">
+                                        <img src="./../images/comment-dots-solid.svg" alt="image description">
+                                        Поддержка и обратная связь
+                                    </a></li>
+                                    <li><a href="#">
+                                        <img src="./../images/pen-nib-solid.svg" alt="image description">
+                                        Правила и условия
+                                    </a></li>
+                                </ul>
+                            </div>
+                            <ul>
+                                <li><a href="#">
+                                <img src="./../images/sign-out-alt-solid.svg" alt="image description">
+                                Выход
+                            </a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -573,5 +735,7 @@
 <script src="./../js/jquery-1.12.4.js"></script>
 <script src="./../js/jquery-ui.js"></script>
 <script src="./../js/script.js"></script>
+<!--<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </body>
 </html>
