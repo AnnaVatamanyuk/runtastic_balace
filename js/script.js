@@ -784,59 +784,19 @@ window.onload = function() {
     );
     myDougnutChart.draw();
 
-    // $('.center').slick({
-    //     centerMode: true,
-    //     arrows: false,
-    //     centerPadding: '160px',
-    //     responsive: [
-    //         {
-    //             breakpoint: 918,
-    //             settings: {
-    //                 centerMode: true,
-    //                 centerPadding: '90px'
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 583,
-    //             settings: {
-    //                 centerMode: true,
-    //                 centerPadding: '10px'
-    //             }
-    //         },
-    //         {
-    //             breakpoint: 422,
-    //             settings: {
-    //                 centerMode: true,
-    //                 centerPadding: '0px'
-    //             }
-    //         }
-    //     ]
-    // });
-
-
-    $('.center').slick({
-        arrows:false,
-        dots: false,
-        slidesToShow: 2,
+    $('.multiple-items').slick({
         infinite: true,
+        slidesToShow: 3,
         slidesToScroll: 3,
+        dots: false,
+        arrows: false,
         responsive: [
             {
-                breakpoint: 865,
+                breakpoint: 870,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 2,
-                    centerPadding: '50px',
-                    centerMode: true
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '40px',
-                    slidesToShow: 1
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
                 }
             }
         ]
