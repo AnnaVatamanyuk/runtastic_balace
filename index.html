@@ -49,7 +49,11 @@
                         <div class="overlay modal-data-birthday">
                             <div class="modal-data d-f fd-c jc-sb">
                                 <p class="p">Дата рождения</p>
-                                <input data-birthday="modal-data-birthday" type="date" value="2000-01-01" min="1960-01-01" max="2010-12-31" name="person-birthday"  class="input-data-birthday"/>
+                                <div>
+                                    <div style="float:left; width: 50px" id="day-picker"></div>
+                                    <div style="float:left; width: 140px" id="month-picker"></div>
+                                    <div style="float:left; width: 70px" id="year-picker"></div>
+                                </div>
                                 <div class="box-confirm-birthday d-f jc-fe">
                                     <button class="button-form button-cancel">Отменa</button>
                                     <button class="button-form button-birthday button-confirm">Выбрать</button>
