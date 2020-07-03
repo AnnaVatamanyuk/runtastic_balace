@@ -784,22 +784,26 @@ window.onload = function() {
     );
     myDougnutChart.draw();
 
-    $('.multiple-items').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+    $(".regular").slick({
         dots: false,
         arrows: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         responsive: [
+                {
+                    breakpoint: 925,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
             {
-                breakpoint: 870,
+                breakpoint: 530,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
+                    slidesToShow: 1
                 }
             }
-        ]
+                ]
     });
 
     const settingsProfile = document.querySelector('.settings')
