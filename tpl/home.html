@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Runtastic Balance</title>
     <link href="./../css/style.css" type="text/css" rel="stylesheet">
-    <link href="./../css/slick.css" type="text/css" rel="stylesheet">
-    <link href="./../css/slick-theme.css" type="text/css" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
@@ -908,8 +906,10 @@
                                             Единицы измерения
                                         </a></li>
                                         <li class="notification-button">
+                                            <a href="#">
                                             <img src="./../images/bell-solid.svg" alt="image description">
                                             Увидомления
+                                            </a>
                                         </li>
                                         <li><a href="#">
                                             <img src="./../images/key-solid.svg" alt="image description">
@@ -1007,7 +1007,7 @@
                                 <p>Выберете, когда ты хочешь получать уведомления:</p>
                                 <div>
                                     <input type="checkbox" id="checkbox1">
-                                    <label for="checkbox1">Новые заявки в друзья</label>
+                                    <label class="checkbox1" for="checkbox1">Новые заявки в друзья</label>
                                 </div>
                                 <div>
                                     <input type="checkbox" id="checkbox2">
@@ -1078,9 +1078,9 @@
                                         <span class="slider round"></span>
                                     </label>
                                 </div>
-                                <div class="d-f fd-c ai-c">
+                                <div class="change-range d-f fd-c ai-c">
                                     <output></output>
-                                    <input type="range" min="1" max="3000" value="2646">
+                                    <input class="range-norma green" type="range" min="1" max="3000" value="2646">
                                     <output></output>
                                     <button class="btn save-btn">Сохранить</button>
                                 </div>

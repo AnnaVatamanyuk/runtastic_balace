@@ -148,9 +148,9 @@ function clockWise(lineHeight, $ele, callback) {
             $($options.get(i)).show();
         }
     }
-
 }
 
+// JS for project
 window.onload = function() {
     var CLIENT_ID = '66126975871-52kguv9dnrlt24l8rc46thadbd4ll50f';
     var SCOPES = ['https://www.googleapis.com/auth/analytics.readonly'];
@@ -451,35 +451,6 @@ window.onload = function() {
         });
     }
 
-    for (let i = 100; i < 220; i++) {
-        let op = document.createElement('option');
-        op.value = i;
-        op.textContent = i;
-        if (selectHeight) {
-            selectHeight.insertAdjacentElement('afterbegin', op);
-        }
-    }
-
-    for (let i = 40; i < 170; i++) {
-        let op = document.createElement('option');
-        op.value = i;
-        op.textContent = i;
-        if (selectWeight) {
-            selectWeight.insertAdjacentElement('afterbegin', op);
-        }
-    }
-
-    let j = 100;
-    for (let i = 0; i < 9; i++) {
-        let op = document.createElement('option');
-        op.value = j;
-        op.textContent = j;
-        j += 100;
-        if (selecWeightgr) {
-            selecWeightgr.insertAdjacentElement('afterbegin', op);
-        }
-    }
-
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -686,180 +657,182 @@ window.onload = function() {
     });
 
     var myCanvas = document.getElementById("myCanvas");
-    myCanvas.width = 200;
-    myCanvas.height = 200;
+    if (myCanvas) {
+        myCanvas.width = 200;
+        myCanvas.height = 200;
 
 
-    var ctx = myCanvas.getContext("2d");
+        var ctx = myCanvas.getContext("2d");
 
-    function drawLine(ctx, startX, startY, endX, endY){
-        ctx.beginPath();
-        ctx.moveTo(startX,startY);
-        ctx.lineTo(endX,endY);
-        ctx.stroke();
-    }
-
-    function drawArc(ctx, centerX, centerY, radius, startAngle, endAngle){
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-        ctx.stroke();
-    }
-
-    function drawPieSlice(ctx,centerX, centerY, radius, startAngle, endAngle, color ){
-        ctx.fillStyle = color;
-        ctx.beginPath();
-        ctx.moveTo(centerX,centerY);
-        ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-        ctx.closePath();
-        ctx.fill();
-    }
-
-    drawLine(ctx,100,100,100,100,);
-    drawArc(ctx, 150,150,150, 0, Math.PI/3);
-    drawPieSlice(ctx, 150,150,150, Math.PI/2, Math.PI/2 + Math.PI/4, '#fff');
-
-    var myVinyls = {
-        "55% углеводов": 15,
-        "15% белков": 5,
-        "30% жиров": 10,
-    };
-
-    var Piechart = function(options){
-        this.options = options;
-        this.canvas = options.canvas;
-        this.ctx = this.canvas.getContext("2d");
-        this.colors = options.colors;
-
-        this.draw = function(){
-            var total_value = 0;
-            var color_index = 0;
-            for (var categ in this.options.data){
-                var val = this.options.data[categ];
-                total_value += val;
-            }
-
-            var start_angle = 0;
-            for (categ in this.options.data){
-                val = this.options.data[categ];
-                var slice_angle = 2 * Math.PI * val / total_value;
-
-                drawPieSlice(
-                    this.ctx,
-                    this.canvas.width/2,
-                    this.canvas.height/2,
-                    Math.min(this.canvas.width/2,this.canvas.height/2),
-                    start_angle,
-                    start_angle+slice_angle,
-                    this.colors[color_index%this.colors.length]
-                );
-
-                start_angle += slice_angle;
-                color_index++;
-            }
-
+        function drawLine(ctx, startX, startY, endX, endY) {
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(endX, endY);
+            ctx.stroke();
         }
-    }
 
-    var myPiechart = new Piechart(
-        {
-            canvas:myCanvas,
-            data:myVinyls,
-            colors:["#e04a5f","#68397d","#f28618"]
+        function drawArc(ctx, centerX, centerY, radius, startAngle, endAngle) {
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+            ctx.stroke();
         }
-    );
-    myPiechart.draw();
 
-    var Piechart = function(options){
-        this.options = options;
-        this.canvas = options.canvas;
-        this.ctx = this.canvas.getContext("2d");
-        this.colors = options.colors;
+        function drawPieSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+            ctx.closePath();
+            ctx.fill();
+        }
 
-        this.draw = function(){
-            var total_value = 0;
-            var color_index = 0;
-            for (var categ in this.options.data){
-                var val = this.options.data[categ];
-                total_value += val;
+        drawLine(ctx, 100, 100, 100, 100,);
+        drawArc(ctx, 150, 150, 150, 0, Math.PI / 3);
+        drawPieSlice(ctx, 150, 150, 150, Math.PI / 2, Math.PI / 2 + Math.PI / 4, '#fff');
+
+        var myVinyls = {
+            "55% углеводов": 15,
+            "15% белков": 5,
+            "30% жиров": 10,
+        };
+
+        var Piechart = function (options) {
+            this.options = options;
+            this.canvas = options.canvas;
+            this.ctx = this.canvas.getContext("2d");
+            this.colors = options.colors;
+
+            this.draw = function () {
+                var total_value = 0;
+                var color_index = 0;
+                for (var categ in this.options.data) {
+                    var val = this.options.data[categ];
+                    total_value += val;
+                }
+
+                var start_angle = 0;
+                for (categ in this.options.data) {
+                    val = this.options.data[categ];
+                    var slice_angle = 2 * Math.PI * val / total_value;
+
+                    drawPieSlice(
+                        this.ctx,
+                        this.canvas.width / 2,
+                        this.canvas.height / 2,
+                        Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                        start_angle,
+                        start_angle + slice_angle,
+                        this.colors[color_index % this.colors.length]
+                    );
+
+                    start_angle += slice_angle;
+                    color_index++;
+                }
+
             }
+        }
 
-            var start_angle = 0;
-            for (categ in this.options.data){
-                val = this.options.data[categ];
-                var slice_angle = 2 * Math.PI * val / total_value;
-
-                drawPieSlice(
-                    this.ctx,
-                    this.canvas.width/2,
-                    this.canvas.height/2,
-                    Math.min(this.canvas.width/2,this.canvas.height/2),
-                    start_angle,
-                    start_angle+slice_angle,
-                    this.colors[color_index%this.colors.length]
-                );
-
-                start_angle += slice_angle;
-                color_index++;
+        var myPiechart = new Piechart(
+            {
+                canvas: myCanvas,
+                data: myVinyls,
+                colors: ["#e04a5f", "#68397d", "#f28618"]
             }
+        );
+        myPiechart.draw();
 
-            //drawing a white circle over the chart
-            //to create the doughnut chart
-            if (this.options.doughnutHoleSize){
-                drawPieSlice(
-                    this.ctx,
-                    this.canvas.width/2,
-                    this.canvas.height/2,
-                    this.options.doughnutHoleSize * Math.min(this.canvas.width/2,this.canvas.height/2),
-                    0,
-                    2 * Math.PI,
-                    "#fff"
-                );
-            }
+        var Piechart = function (options) {
+            this.options = options;
+            this.canvas = options.canvas;
+            this.ctx = this.canvas.getContext("2d");
+            this.colors = options.colors;
 
-                if (this.options.legend){
+            this.draw = function () {
+                var total_value = 0;
+                var color_index = 0;
+                for (var categ in this.options.data) {
+                    var val = this.options.data[categ];
+                    total_value += val;
+                }
+
+                var start_angle = 0;
+                for (categ in this.options.data) {
+                    val = this.options.data[categ];
+                    var slice_angle = 2 * Math.PI * val / total_value;
+
+                    drawPieSlice(
+                        this.ctx,
+                        this.canvas.width / 2,
+                        this.canvas.height / 2,
+                        Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                        start_angle,
+                        start_angle + slice_angle,
+                        this.colors[color_index % this.colors.length]
+                    );
+
+                    start_angle += slice_angle;
+                    color_index++;
+                }
+
+                //drawing a white circle over the chart
+                //to create the doughnut chart
+                if (this.options.doughnutHoleSize) {
+                    drawPieSlice(
+                        this.ctx,
+                        this.canvas.width / 2,
+                        this.canvas.height / 2,
+                        this.options.doughnutHoleSize * Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                        0,
+                        2 * Math.PI,
+                        "#fff"
+                    );
+                }
+
+                if (this.options.legend) {
                     color_index = 0;
                     var legendHTML = "";
-                    for (categ in this.options.data){
-                        legendHTML += "<div><span style='display:inline-block;width:20px;background-color:"+this.colors[color_index++]+";'>&nbsp;</span> "+categ+"</div>";
+                    for (categ in this.options.data) {
+                        legendHTML += "<div><span style='display:inline-block;width:20px;background-color:" + this.colors[color_index++] + ";'>&nbsp;</span> " + categ + "</div>";
                     }
                     this.options.legend.innerHTML = legendHTML;
                 }
+            }
         }
-    }
 
-    var myDougnutChart = new Piechart(
-        {
-            canvas:myCanvas,
-            data:myVinyls,
-            colors:["#e04a5f","#68397d","#f28618"],
-            doughnutHoleSize:0.5,
-            legend:myLegend
+        var myDougnutChart = new Piechart(
+            {
+                canvas: myCanvas,
+                data: myVinyls,
+                colors: ["#e04a5f", "#68397d", "#f28618"],
+                doughnutHoleSize: 0.5,
+                legend: myLegend
 
-        }
-    );
-    myDougnutChart.draw();
+            }
+        );
+        myDougnutChart.draw();
 
-    $(".regular").slick({
-        dots: false,
-        arrows: false,
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [
+        $(".regular").slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
                 {
                     breakpoint: 925,
                     settings: {
                         slidesToShow: 2
                     }
                 },
-            {
-                breakpoint: 530,
-                settings: {
-                    slidesToShow: 1
+                {
+                    breakpoint: 530,
+                    settings: {
+                        slidesToShow: 1
+                    }
                 }
-            }
-                ]
-    });
+            ]
+        });
+    }
 
     const settingsProfile = document.querySelector('.settings')
     if (settingsProfile){
@@ -978,10 +951,62 @@ window.onload = function() {
         o = document.querySelector('.change-norma-blog output');
 
     o.innerHTML = i.value;
-// use 'change' instead to see the difference in response
     i.addEventListener('change', function () {
         o.innerHTML = i.value;
     }, false);
+
+
+    const rangeColor = document.querySelector('.change-range input[type=range]::-webkit-slider-thumb')
+    let inputRange = document.getElementsByClassName('range-norma')[0],
+        maxValue = 3000,
+        speed = 5,
+        currValue, rafID;
+
+
+    inputRange.min = 0;
+    inputRange.max = maxValue;
+// handle range animation
+    function animateHandler() {n
+        var transX = currValue - maxValue;
+        inputRange.value = currValue;
+        if (this.value < 1029) {
+            inputRange.classList.remove('red');
+            inputRange.classList.remove('yellow');
+            inputRange.classList.add('green');
+        }
+        if (this.value > 1029 && this.value < 2223) {
+            inputRange.classList.remove('green');
+            inputRange.classList.remove('red');
+            inputRange.classList.add('yellow');
+        }
+        if (this.value > 2223 && this.value < 3000) {
+            inputRange.classList.remove('green');
+            inputRange.classList.add('red');
+            inputRange.classList.remove('yellow');
+        }
+        if(currValue > -1) {
+            window.requestAnimationFrame(animateHandler);
+        }
+        currValue = currValue - speed;
+    }
+    inputRange.addEventListener('change', function() {
+        //Change slide thumb color on way down
+        if (this.value < 1029) {
+            inputRange.classList.remove('red');
+            inputRange.classList.remove('yellow');
+            inputRange.classList.add('green');
+        }
+        if (this.value > 1029 && this.value < 2223) {
+            inputRange.classList.remove('green');
+            inputRange.classList.remove('red');
+            inputRange.classList.add('yellow');
+        }
+        if (this.value > 2223 && this.value < 3000) {
+            inputRange.classList.remove('green');
+            inputRange.classList.add('red');
+            inputRange.classList.remove('yellow');
+        }
+    });
 
 }
 
