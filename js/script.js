@@ -224,10 +224,10 @@ window.onload = function() {
         })
     }
 
-    const inputBirth = document.querySelector('.input-data-birthday');
-    const selectHeight = document.querySelector('#input-data-height');
-    const selectWeight = document.querySelector('#input-data-weight');
-    const selecWeightgr = document.querySelector('#input-data-weight-gr');
+    // const inputBirth = document.querySelector('.input-data-birthday');
+    // const selectHeight = document.querySelector('#input-data-height');
+    // const selectWeight = document.querySelector('#input-data-weight');
+    const weightGr = document.querySelector('#g-picker');
 
     const btnChancelAll = document.querySelectorAll('.button-cancel');
     if (btnChancelAll){
@@ -322,6 +322,25 @@ window.onload = function() {
     const fut = document.querySelector('.metrics-fut');
     const futText = document.querySelector('.metrics-sm');
 
+    var heightPerson = {
+        yourHeight: 100,
+    };
+
+    $(document).ready(function () {
+        let yourHeight = [];
+        for(let i = 100; i <= 250; i++) {
+            yourHeight.push(i);
+        }
+
+        $("#height-picker").picker({
+            data: yourHeight,
+            lineHeight: 30,
+            selected: heightPerson.yourHeight
+        }, function (k) {
+            heightPerson.yourHeight = yourHeight[k];
+        });
+    });
+
     let chooseHeight = 'см';
     if (inpPersonHeight){
         inpPersonHeight.addEventListener('click', function() {
@@ -345,18 +364,52 @@ window.onload = function() {
         buttonHeight.addEventListener('click', function (e) {
             e.preventDefault();
             inpPersonHeight.value = '';
-            inpPersonHeight.value = `${selectHeight.value} ${chooseHeight}`;
-            objCcal.height = +selectHeight.value;
+            inpPersonHeight.value = `${heightPerson.yourHeight} ${chooseHeight}`;
+            // objCcal.height = +selectHeight.value;
              inpPersonHeight.classList.remove('error');
-            if (selectHeight.value !== '') {
+            if (heightPerson.yourHeight !== '') {
                 document.querySelector('.modal-data-height').style.display = 'none'
             }
         });
     }
     const funt = document.querySelector('.metrics-funt');
     const funtText = document.querySelector('.metrics-kg');
+    const gText = document.querySelector('.metrics-g');
     const inpPersonWeight = document.querySelector('[name="person-weight"]');
     const buttonWeight = document.querySelector('.button-weight');
+
+    let weightPerson = {
+        kgWeight: 40,
+        gWeight: 100,
+    };
+
+    $(document).ready(function () {
+        let kgWeight = [];
+        let gWeight = [];
+
+        for(let i = 40; i <= 300; i++) {
+            kgWeight.push(i);
+        }
+
+        for(let j = 100; j <= 999; j++) {
+            gWeight.push(j);
+        }
+
+        $("#kg-picker").picker({
+            data: kgWeight,
+            lineHeight: 30,
+            selected: weightPerson.kgWeight
+        }, function (k) {
+            weightPerson.kgWeight = kgWeight[k];
+        });
+        $("#g-picker").picker({
+            data: gWeight,
+            lineHeight: 30,
+            selected: weightPerson.gWeight
+        }, function (k) {
+            weightPerson.gWeight = gWeight[k];
+        });
+    });
 
     let units = 'kg';
     if (inpPersonWeight){
@@ -367,11 +420,13 @@ window.onload = function() {
                     if (units === 'kg'){
                         units = 'bl';
                         funtText.textContent = 'bl';
-                        selecWeightgr.setAttribute('disabled', true);
+                        gText.style.display = 'none'
+                        weightGr.style.display = 'none';
                     } else {
                         units = 'kg';
                         funtText.textContent = 'kg';
-                        selecWeightgr.removeAttribute('disabled');
+                        weightGr.style.display = 'block';
+                        gText.style.display = 'block'
                     }
 
                 })
@@ -384,13 +439,13 @@ window.onload = function() {
             e.preventDefault();
             inpPersonWeight.value = '';
             if (units === 'kg'){
-                inpPersonWeight.value = `${selectWeight.value}.${selecWeightgr.value} ${units}`;
+                inpPersonWeight.value = `${weightPerson.kgWeight}.${weightPerson.gWeight} ${units}`;
             } else {
-                inpPersonWeight.value = `${selectWeight.value} ${units}`;
+                inpPersonWeight.value = `${weightPerson.kgWeight} ${units}`;
             }
-            objCcal.weight = +selectWeight.value;
+            //objCcal.weight = +selectWeight.value;
             inpPersonWeight.classList.remove('error');
-            if (selectHeight.value !== '') {
+            if (weightPerson.value !== '') {
                 document.querySelector('.modal-data-weight').style.display = 'none'
             }
         });

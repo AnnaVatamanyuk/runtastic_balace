@@ -257,7 +257,6 @@ ul{
 
 .modal-data p{
     font-weight: 600;
-    margin-bottom: 25px;
 }
 
 .modal-data input,
@@ -307,6 +306,113 @@ ul{
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 600;
+}
+
+.overlay-block{
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.picker-wrapper {
+    text-align: center;
+    position: relative;
+    height: 210px;
+    display: inline-block;
+    line-height: 30px;
+    width: 100%;
+    font-size: 20px;
+    perspective: 1000px;
+    perspective-origin: center center;
+}
+
+.picker-wrapper:nth-child(1):after {
+    content: '';
+    background-color: #fff;
+    height: 209px;
+    top: 0;
+    width: 15px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+}
+
+.picker-wrapper:nth-child(2):after {
+    content: '';
+    background-color: #fff;
+    height: 209px;
+    top: 0;
+    width: 15px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+}
+
+.picker-wrapper:nth-child(3):after {
+    content: '';
+    background-color: #fff;
+    height: 209px;
+    top: 0;
+    width: 15px;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+}
+
+.picker-wrapper::-webkit-scrollbar {width:0;}
+
+.picker-scroller {
+    -webkit-transition : -webkit-transform 100ms ease;
+    -webkit-transform : translateZ(-90px) rotateX(0deg);
+    -webkit-transform-style : preserve-3d;
+    height : 100%;
+}
+.picker-scroller .option{
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    width : 100%;
+    transition: all 300ms;
+    color : black;
+    transform-origin: 50% 50%;
+    -webkit-transform-style : preserve-3d;
+}
+
+
+.picker-up {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background: rgba(256, 256, 256, 0.6);
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #53bc53;
+
+}
+.picker-down {
+    position: absolute;
+    top: 120px;
+    z-index: 2;
+    background: rgba(256, 256, 256, 0.6);
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid #53bc53;
+}
+.clone-scroller {
+    -webkit-box-shadow: inset 0 20px 24px 3px white, inset 0 -20px 24px 3px white;
+    -ms-box-shadow: inset 0 10px 24px 3px white, inset 0 -20px 24px 3px white;
+    -moz-box-shadow: inset 0 10px 24px 3px white, inset 0 -20px 24px 3px white;
+    box-shadow: inset 0 10px 24px 3px white, inset 0 -20px 24px 3px white;
+    z-index: 5;
+    overflow: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px
+}
+.clone-scroller .option {
+    visibility: hidden;
 }
 
 @media (max-width: 768px) {
@@ -2599,95 +2705,4 @@ input[type='range']:last-child{
     }
 }
 
-
-
-
-
-
-
-
-
-
-.picker-wrapper,
-.picker-wrapper * {
-    box-sizing: border-box;
-    -webkit-user-select: none;
-    font-family: 'Roboto',helvetica
-}
-.picker-wrapper {
-    text-align: center;
-    position: relative;
-    height: 210px;
-    display: inline-block;
-    line-height: 30px;
-    width: 100%;
-    font-size: 20px;
-    perspective: 1000px;
-    perspective-origin: center center;
-
-}
-.picker-scroller {
-
-    -webkit-transition : -webkit-transform 100ms ease;
-    -webkit-transform : translateZ(-90px) rotateX(0deg);
-    -webkit-transform-style : preserve-3d;
-    height : 100%;
-    /*
-        overflow: auto;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        padding-top: 90px;
-        padding-bottom: 90px;
-    */
-}
-.picker-scroller .option{
-    position: absolute;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    width : 100%;
-    transition: all 300ms;
-    color : black;
-    transform-origin: 50% 50%;
-    -webkit-transform-style : preserve-3d;
-}
-
-
-.picker-up {
-    position: absolute;
-    top: 0;
-    z-index: 2;
-    background: rgba(256, 256, 256, 0.6);
-    width: 100%;
-    height: 90px;
-    border-bottom: 1px solid lightgray;
-
-}
-.picker-down {
-    position: absolute;
-    top: 120px;
-    z-index: 2;
-    background: rgba(256, 256, 256, 0.6);
-    width: 100%;
-    height: 90px;
-    border-top: 1px solid lightgray;
-}
-.clone-scroller {
-    -webkit-box-shadow: inset 0 20px 24px 3px white, inset 0 -20px 24px 3px white;
-    -ms-box-shadow: inset 0 10px 24px 3px white, inset 0 -20px 24px 3px white;
-    -moz-box-shadow: inset 0 10px 24px 3px white, inset 0 -20px 24px 3px white;
-    box-shadow: inset 0 10px 24px 3px white, inset 0 -20px 24px 3px white;
-    z-index: 5;
-    overflow: auto;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding-top: 90px;
-    padding-bottom: 90px
-}
-.clone-scroller .option {
-    visibility: hidden;
-}
 

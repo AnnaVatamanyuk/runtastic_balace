@@ -49,10 +49,10 @@
                         <div class="overlay modal-data-birthday">
                             <div class="modal-data d-f fd-c jc-sb">
                                 <p class="p">Дата рождения</p>
-                                <div>
-                                    <div style="float:left; width: 50px" id="day-picker"></div>
-                                    <div style="float:left; width: 140px" id="month-picker"></div>
-                                    <div style="float:left; width: 70px" id="year-picker"></div>
+                                <div class="overlay-block d-f jc-c ai-c">
+                                    <div style="width: 70px" id="day-picker"></div>
+                                    <div style="width: 100px" id="month-picker"></div>
+                                    <div style="width: 100px" id="year-picker"></div>
                                 </div>
                                 <div class="box-confirm-birthday d-f jc-fe">
                                     <button class="button-form button-cancel">Отменa</button>
@@ -66,11 +66,10 @@
                         <div class="overlay modal-data modal-data-height">
                             <div class="modal-data d-f fd-c jc-sb">
                                 <p class="p">Рост</p>
-                                <div class="modal-data-main d-f jc-c ai-c">
-                                    <select name="height" id="input-data-height"> </select>
-                                    <span class="metrics-sm">см</span>
+                                <div class="overlay-block ai-c d-f jc-c">
+                                    <div style="width:90px" id="height-picker"></div>
+                                    <span class="metrics-sm">cm</span>
                                 </div>
-
                                 <div class="modal-data-footer box-confirm-height d-f jc-sb">
                                     <button type="button" class="button-form metrics-fut">ФУТЫ</button>
                                     <div>
@@ -86,11 +85,11 @@
                         <div class="overlay modal-data modal-data-weight">
                             <div class="modal-data d-f fd-c jc-sb">
                                 <p class="p">Вес</p>
-                                <div class="modal-data-main d-f ai-c jc-c">
-                                    <select name="weight" id="input-data-weight"></select>
+                                <div class="overlay-block d-f ai-c jc-c">
+                                    <div style="width: 140px" id="kg-picker"></div>
                                     <span class="metrics-kg">kg</span>
-                                    <select name="weight" id="input-data-weight-gr"></select>
-                                    <span class="metrics-kg">g</span>
+                                    <div style="width: 90px" id="g-picker"></div>
+                                    <span class="metrics-g">g</span>
                                 </div>
                                 <div class="modal-data-footer box-confirm-weight d-f jc-sb">
                                     <button type="button" class="button-form metrics-funt">ФУНТЫ</button>
