@@ -237,6 +237,15 @@ window.onload = function() {
         }
     }
 
+    const addEat = document.querySelectorAll('.add-eat a')
+    for (let i = 0; i <= addEat.length; i++){
+        if (addEat[i]){
+            addEat[i].addEventListener('click', function () {
+                $( "#tabs-block_holder" ).tabs({ active: 2});
+            })
+        }
+    }
+
     // const inputBirth = document.querySelector('.input-data-birthday');
     // const selectHeight = document.querySelector('#input-data-height');
     // const selectWeight = document.querySelector('#input-data-weight');
@@ -1099,6 +1108,105 @@ window.onload = function() {
                 inputRange.classList.remove('yellow');
             }
         });
+    }
+    const searchTrainingInput = document.querySelector('.search-training')
+    const trainingListBlock = jQuery('.training-list-block ul')
+    if (searchTrainingInput) {
+        let trainingName = [
+            {
+                name: 'лыжи',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'мотоспорт',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'настольный тенис',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'параплан',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'парусный спорт',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'пилатес',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'плавание',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'поход',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'регби',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'роликовые лыжи',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'ручной велосипед',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'рыбная ловля со спинигом',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'силовая тренировка',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'скалолазание',
+                image: './../images/Skiing.png'
+            },
+            {
+                name: 'сквош',
+                image: './../images/Skiing.png'
+            }
+        ];
+
+        function autocompleteTraining(param) {
+            let trainingFilter = [];
+            if (param && param !== '') {
+                param.toLowerCase();
+                for (let i =0; i < trainingName.length; i++){
+                   if (trainingName[i].name.includes(param)){
+                       trainingFilter.push(trainingName[i])
+                   }
+                }
+            } else {
+                trainingFilter = trainingName;
+            }
+            trainingListBlock.empty();
+
+            for (let j = 0; j < trainingFilter.length; j++){
+                console.log(trainingFilter[j].name)
+                trainingListBlock.append(`<li class="box d-f ai-c">
+                                        <input type="checkbox" id="skiing">
+                                        <span class="check"></span>
+                                        <label for="skiing"><img src="${trainingFilter[j].image}" alt="image description"></label>
+                                        <span>${trainingFilter[j].name}</span>
+                                        </li>`)
+            }
+        }
+
+        autocompleteTraining();
+
+        document.querySelector('.search-training').onchange = function () {
+            console.log(searchTrainingInput.value)
+            autocompleteTraining(searchTrainingInput.value)
+        }
+        console.log(searchTrainingInput)
     }
 }
 
