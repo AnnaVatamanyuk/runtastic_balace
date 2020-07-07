@@ -139,7 +139,7 @@ ul{
 }
 
 .parameters-text{
-    margin-bottom: 150px;
+    margin-bottom: 65px;
 }
 
 .parameters-text p{
@@ -215,7 +215,7 @@ ul{
 }
 
 .choose-parameters {
-    margin-bottom: 150px;
+    margin-bottom: 80px;
 }
 
 .btn-next{
@@ -224,16 +224,39 @@ ul{
     margin-bottom: 80px;
 }
 
+.choose-parameters .form-control{
+    text-align: right;
+    text-transform: none;
+    font-weight: normal;
+}
+
 .form-control{
     outline: none;
     border: none;
     border-bottom: 1px solid #9e9e9e;
     width: 500px;
-    padding: 15px 50px 5px 5px;
+    padding: 15px 15px 5px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.label-position{
+    position: relative;
+}
+
+.label-position label{
     color: #9e9e9e;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.choose-parameters .form-control::placeholder{
+    color: #000;
 }
 
 .modal-data-birthday,
@@ -248,7 +271,9 @@ ul{
     /*height: 200px;*/
     box-shadow: 0 0 5px;
     position: absolute;
-    left: 38%;
+    left: 22%;
+    z-index: 1;
+    top: -110px;
 }
 
 .modal-data{
@@ -746,7 +771,7 @@ ul{
 
 .registration-popup form{
     padding-top: 50px;
-    height: 100vh;
+    /*height: 100vh;*/
 }
 
 .registration-popup .form-control{
@@ -793,7 +818,7 @@ ul{
 }
 
 .registration-auth_data{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .registration-auth_data .form-control{
@@ -1080,7 +1105,7 @@ ul{
 }
 
 #magazine .tabs-block {
-    padding: 71px 0 0;
+    padding: 45px 0 0;
 }
 
 .tabs-days_fixed .tabs-list {
@@ -1315,12 +1340,22 @@ ul{
 .choose-eat_section{
     background-color: #f5f5f5;
     height: 100vh;
+    padding-top: 70px;
 }
 
 .choose-eat_search{
     padding: 15px 0;
     background-color: #69B22C;
     margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.choose-eat_search img{
+    position: absolute;
+    width: 15px;
 }
 
 .choose-product{
@@ -1330,6 +1365,7 @@ ul{
     position: relative;
     margin-bottom: 15px;
     border-radius: 5px;
+    outline: none;
 }
 
 .choose-product:before{
@@ -1369,6 +1405,11 @@ ul{
     background-color: #fff;
 }
 
+.choose-eat .container{
+    max-width: none;
+    width: 900px;
+}
+
 .choose-eat_detail,
 .choose-eat_day{
     padding: 15px;
@@ -1395,7 +1436,7 @@ ul{
     padding: 15px 15px 25px;
     background-color: #fff;
     position: absolute;
-    bottom: 50px;
+    top: 100px;
     left: 33%;
     box-shadow: 0 0 5px #aeaeae;
 }
@@ -1416,9 +1457,21 @@ ul{
     margin-bottom: 0;
 }
 
+@media (max-width: 925px){
+    .choose-eat .container{
+        width: 700px;
+    }
+}
+
 @media (max-width: 725px){
     .choose-day{
         left: 25%;
+        width: 360px;
+    }
+
+    .choose-eat .container{
+        width: 100%;
+        max-width: 900px;
     }
 
     .tabs-list{
@@ -1460,7 +1513,7 @@ ul{
     }
 }
 
-@media (max-width: 515px) {
+@media (max-width: 530px) {
 
     .choose-day{
         width: 310px;
@@ -1496,29 +1549,20 @@ ul{
         top: 12px;
     }
 
-    .choose-eat_detail, .choose-eat_day {
-        padding: 10px;
+    #magazine input[type='range'] {
+        width: 100px;
+    }
+
+    .carbohydrates-text, .fat-text, .proteins-text {
         font-size: 14px;
     }
 
-    .choose-eat_detail img, .choose-eat_day img {
-        margin-right: 10px;
+    .schedule-eat_text h3 {
+        font-size: 15px;
     }
 
-    .choose-eat_detail img{
-        width: 28px;
-    }
-
-    .choose-eat_day img {
-        width: 15px;
-    }
-
-    .choose-eat {
-        padding: 13px 0;
-    }
-
-    .choose-eat p {
-        font-size: 14px;
+    .schedule-eat_text p {
+        font-size: 12px;
     }
 }
 
@@ -1553,22 +1597,6 @@ ul{
 
     .calories-left span{
         text-align: center;
-        font-size: 12px;
-    }
-
-    input[type='range'] {
-        width: 100px;
-    }
-
-    .carbohydrates-text, .fat-text, .proteins-text {
-        font-size: 14px;
-    }
-
-    .schedule-eat_text h3 {
-        font-size: 15px;
-    }
-
-    .schedule-eat_text p {
         font-size: 12px;
     }
 
@@ -1630,12 +1658,50 @@ ul{
     .choose-product{
         font-size: 12px;
     }
+
+    .norms-calories div {
+        margin-right: 30px;
+    }
 }
 
-@media (max-width: 350px) {
+@media  (max-width: 390px) {
+    .choose-eat_section{
+        padding-top: 54px;
+    }
 
-    input[type='range'] {
-        width: 70px;
+    .choose-eat_detail, .choose-eat_day {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .choose-eat_detail img, .choose-eat_day img {
+        margin-right: 10px;
+    }
+
+    .choose-eat_detail img{
+        width: 28px;
+    }
+
+    .choose-day {
+        left: 12%;
+    }
+
+    .choose-eat_day img {
+        width: 15px;
+    }
+
+    .choose-eat {
+        padding: 13px 0;
+    }
+
+    .choose-eat p {
+        font-size: 14px;
+    }
+}
+@media (max-width: 375px) {
+
+    #magazine input[type='range'] {
+        width: 80px;
     }
 
     .carbohydrates-text, .fat-text, .proteins-text {
@@ -1703,6 +1769,13 @@ ul{
 
     .choose-eat p {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 350px) {
+    .choose-day{
+        left: 10%;
+        width: 270px;
     }
 }
 
@@ -1873,6 +1946,125 @@ ul{
 .additional-programs .slider {
     width: 100%;
     margin: 25px;
+}
+
+/* Slider */
+.slick-slider
+{
+    position: relative;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list
+{
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+{
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track{
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-track:before,
+.slick-track:after
+{
+    display: table;
+    content: '';
+}
+.slick-track:after
+{
+    clear: both;
+}
+
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+
+.slick-slide
+{
+    display: none;
+    float: left;
+    /*height: 100%;*/
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-vertical .slick-slide
+{
+    display: block;
+
+    height: auto;
+
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
 }
 
 .additional-programs .slick-slide {
@@ -2064,7 +2256,11 @@ ul{
 .choose-training,
 .training-list,
 .profile-block,
-.blog{
+.blog, .units-block,
+.confidentiality-block,
+.support-feedback_block,
+.terms-conditions_block,
+.exit-block{
     padding-top: 30px;
     display: none;
     position: absolute;
@@ -2086,7 +2282,12 @@ ul{
 .choose-training .tab-background p,
 .training-list .tab-background p,
 .profile-block .tab-background p,
-.blog .tab-background p{
+.blog .tab-background p,
+.units-block .tab-background p,
+.confidentiality-block .tab-background p,
+.support-feedback_block .tab-background p,
+.terms-conditions_block .tab-background p,
+.exit-block .tab-background p{
     position: relative;
     padding-left: 30px;
 }
@@ -2096,7 +2297,12 @@ ul{
 .choose-training .arrow-back,
 .training-list .arrow-back,
 .profile-block .arrow-back,
-.blog .arrow-back{
+.blog .arrow-back,
+.units-block .arrow-back,
+.confidentiality-block .arrow-back,
+.support-feedback_block .arrow-back,
+.terms-conditions_block .arrow-back,
+.exit-block .arrow-back{
     position: absolute;
     top: 10px;
     width: 15px;
@@ -2558,7 +2764,27 @@ ul{
     }
 }
 
+.units-block{
+    display: none;
+}
+
+.confidentiality-block{
+    display: none;
+}
+
 .blog{
+    display: none;
+}
+
+.support-feedback_block{
+    display: none;
+}
+
+.terms-conditions_block{
+    display: none;
+}
+
+.exit-block{
     display: none;
 }
 
@@ -2572,7 +2798,16 @@ ul{
 }
 
 .blog-title img{
+    width: 20px;
+}
+
+.logo-blog img{
     width: 50px;
+}
+
+.blog-content{
+    background-color: #fff;
+    padding: 10px 0 50px;
 }
 
 .blog-container{
@@ -2580,14 +2815,24 @@ ul{
     line-height: 22px;
 }
 
-.blog-messenger img{
-    width: 25px;
-    margin-right: 10px;
+.blog-messenger a{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #000;
+    margin-right: 15px;
 }
 
-.whats-app{
-    border: 1px solid #fff;
-    border-radius: 50%;
+.blog-messenger a:last-child{
+    margin-right: 0;
+}
+
+.blog-messenger a:hover{
+    background-color: #53bc53;
+}
+
+.blog-messenger img{
+    width: 15px;
 }
 
 .logo-blog h2{
@@ -2753,7 +2998,7 @@ ul{
     position: relative;
     bottom: 5px;
     background-color: #fff;
-    cursor: -moz-grab;
+    /*cursor: -moz-grab;*/
     -moz-transition: border 1000ms ease;
     transition: border 1000ms ease;
 }
@@ -2782,13 +3027,13 @@ ul{
     border-color: rgba(255,87,81,1);
 }
 
-.change-range input[type=range]::-webkit-slider-thumb:active {
-    cursor: -webkit-grabbing;
-}
+/*.change-range input[type=range]::-webkit-slider-thumb:active {*/
+/*    cursor: -webkit-grabbing;*/
+/*}*/
 
-.change-range input[type=range]::-moz-range-thumb:active {
-    cursor: -moz-grabbing;
-}
+/*.change-range input[type=range]::-moz-range-thumb:active {*/
+/*    cursor: -moz-grabbing;*/
+/*}*/
 
 .change-norma-blog div output {
     text-align: center;
@@ -2814,121 +3059,4 @@ ul{
 
 /*SlIDER STYLE*/
 
-/* Slider */
-.slick-slider
-{
-    position: relative;
 
-    display: block;
-    box-sizing: border-box;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list
-{
-    position: relative;
-
-    display: block;
-    overflow: hidden;
-
-    margin: 0;
-    padding: 0;
-}
-.slick-list:focus
-{
-    outline: none;
-}
-
-.slick-list.dragging
-{
-    cursor: pointer;
-    cursor: hand;
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list
-{
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.slick-track{
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.slick-track:before,
-.slick-track:after
-{
-    display: table;
-    content: '';
-}
-.slick-track:after
-{
-    clear: both;
-}
-
-.slick-loading .slick-track
-{
-    visibility: hidden;
-}
-
-.slick-slide
-{
-    display: none;
-    float: left;
-    /*height: 100%;*/
-    min-height: 1px;
-}
-[dir='rtl'] .slick-slide
-{
-    float: right;
-}
-.slick-slide img
-{
-    display: block;
-}
-.slick-slide.slick-loading img
-{
-    display: none;
-}
-.slick-slide.dragging img
-{
-    pointer-events: none;
-}
-.slick-initialized .slick-slide
-{
-    display: block;
-}
-.slick-loading .slick-slide
-{
-    visibility: hidden;
-}
-.slick-vertical .slick-slide
-{
-    display: block;
-
-    height: auto;
-
-    border: 1px solid transparent;
-}
-.slick-arrow.slick-hidden {
-    display: none;
-}

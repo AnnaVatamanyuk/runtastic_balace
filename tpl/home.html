@@ -115,7 +115,7 @@
                                                         <p>Для тебя оптимально 662-926 калорий</p>
                                                     </div>
                                                     <div class="add-eat">
-                                                        <a href="./choose-eat.html"><img src="./../images/plus-solid.svg" alt="image description"></a>
+                                                        <a href="#add-product"><img src="./../images/plus-solid.svg" alt="image description"></a>
                                                     </div>
                                                 </li>
                                                 <li class="lunch d-f jc-sb ai-c">
@@ -717,7 +717,67 @@
                             </div>
                         </div>
                     </div>
-                    <div id="add-program" class="tab-holder d-f fw-w "></div>
+                    <div id="add-program" class="tab-holder d-f fw-w ">
+                        <div class="choose-eat_section">
+                            <div class="choose-eat_search">
+                                <div class="container d-f fd-c">
+                                    <input class="choose-product" type="text" placeholder="Найти продукты">
+                                    <div class="choose-btn">
+                                        <button class="btn">Добавить калории</button>
+                                        <button class="btn">Сканировать штрихкод</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose-eat">
+                                <div class="container">
+                                    <div class="d-f">
+                                        <div class="choose-eat_detail d-f ai-c">
+                                            <img src="./../images/breakfast.png" alt="image description">
+                                            <span>Завтрак</span>
+                                        </div>
+                                        <div class="choose-eat_day d-f ai-c">
+                                            <img src="./../images/calendar-green.svg" alt="image description">
+                                            <span>Сегодня</span>
+                                        </div>
+                                    </div>
+                                    <p>Для тебя оптимально 662-926 калорий</p>
+                                </div>
+                            </div>
+                            <div class="choose-day">
+                                <h3>Выбрать прием пищи</h3>
+                                <ul>
+                                    <li class="breakfast d-f jc-sb ai-c">
+                                        <a href="#">
+                                            <div class="schedule-eat_text">
+                                                <p>Завтрак</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="lunch d-f jc-sb ai-c">
+                                        <a href="#">
+                                            <div class="schedule-eat_text">
+                                                <p>Обед</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="dinner d-f jc-sb ai-c">
+                                        <a href="#">
+                                            <div class="schedule-eat_text">
+                                                <p>Ужин</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="snack d-f jc-sb ai-c">
+                                        <a href="#">
+                                            <div class="schedule-eat_text">
+                                                <p>Перекус</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div id="programs" class="tab-holder d-f fd-c fw-w ">
                         <div class="tab-background d-f ai-c">
                             <p>Программа</p>
@@ -911,7 +971,7 @@
                                             Увидомления
                                             </a>
                                         </li>
-                                        <li><a href="#">
+                                        <li class="confidentiality"><a href="#">
                                             <img src="./../images/key-solid.svg" alt="image description">
                                             Конфиденциальность
                                         </a></li>
@@ -924,11 +984,11 @@
                                             <img src="./../images/runtasting-settings.png" alt="image description">
                                             Runtastic
                                         </a></li>
-                                        <li><a href="#">
+                                        <li class="support-feedback"><a href="#">
                                             <img src="./../images/comment-dots-solid.svg" alt="image description">
                                             Поддержка и обратная связь
                                         </a></li>
-                                        <li><a href="#">
+                                        <li class="terms-conditions"><a href="#">
                                             <img src="./../images/pen-nib-solid.svg" alt="image description">
                                             Правила и условия
                                         </a></li>
@@ -982,20 +1042,74 @@
                                                 <option>France</option>
                                             </select>
                                         </div>
-                                        <div class="other-personal-data">
-                                            <label for="profile-birthday">Дата рождения</label>
-                                            <input id="profile-birthday" class="form-control" type="email" placeholder="15 июнь. 2004г.">
+                                        <div class="label-position other-personal-data">
+                                            <label> Дата рождения</label>
+                                            <input type="text" autocomplete="off" name="person-birthday" data-birthday="modal-data-birthday" class="form-control input-param" placeholder="00.00.0000" />
+                                            <div class="overlay modal-data-birthday">
+                                                <div class="modal-data d-f fd-c jc-sb">
+                                                    <p class="p">Дата рождения</p>
+                                                    <div class="overlay-block d-f jc-c ai-c">
+                                                        <div style="width: 70px" id="day-picker"></div>
+                                                        <div style="width: 100px" id="month-picker"></div>
+                                                        <div style="width: 100px" id="year-picker"></div>
+                                                    </div>
+                                                    <div class="box-confirm-birthday d-f jc-fe">
+                                                        <button class="button-form button-cancel">Отменa</button>
+                                                        <button class="button-form button-birthday button-confirm">Выбрать</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="other-personal-data">
-                                            <label for="profile-height">Рост</label>
-                                            <input id="profile-height" class="form-control" type="email" placeholder="180cm">
+                                        <div class="label-position other-personal-data">
+                                            <label>Рост</label>
+                                            <input data-height="modal-data-height" autocomplete="off" type="text" placeholder="100cm" name="person-height" class="input-param form-control">
+                                            <div class="overlay modal-data-height">
+                                                <div class="modal-data d-f fd-c jc-sb">
+                                                    <p class="p">Рост</p>
+                                                    <div class="overlay-block ai-c d-f jc-c">
+                                                        <div style="width:90px" id="height-picker"></div>
+                                                        <span class="metrics-sm">cm</span>
+                                                    </div>
+                                                    <div class="modal-data-footer box-confirm-height d-f jc-sb">
+                                                        <button type="button" class="button-form metrics-fut">ФУТЫ</button>
+                                                        <div>
+                                                            <button class="button-form button-cancel">отменa</button>
+                                                            <button class="button-form button-height button-confirm">выбрать</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="other-personal-data">
-                                            <label for="profile-weight">Вес</label>
-                                            <input id="profile-weight" class="form-control" type="email" placeholder="75,0 кг">
+                                        <div class="label-position other-personal-data">
+                                            <label>текущий вес </label>
+                                            <input data-weight="modal-data-weight" autocomplete="off" type="text" name="person-weight" placeholder="40 kg" class="input-param form-control">
+                                            <div class="overlay modal-data-weight">
+                                                <div class="modal-data d-f fd-c jc-sb">
+                                                    <p class="p">Вес</p>
+                                                    <div class="overlay-block d-f ai-c jc-c">
+                                                        <div style="width: 140px" id="kg-picker"></div>
+                                                        <span class="metrics-kg">kg</span>
+                                                        <div style="width: 90px" id="g-picker"></div>
+                                                        <span class="metrics-g">g</span>
+                                                    </div>
+                                                    <div class="modal-data-footer box-confirm-weight d-f jc-sb">
+                                                        <button type="button" class="button-form metrics-funt">ФУНТЫ</button>
+                                                        <div>
+                                                            <button class="button-form button-cancel">отменa</button>
+                                                            <button class="button-form button-weight button-confirm">выбрать</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="units-block">
+                            <div class="tab-background d-f ai-c">
+                                <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
+                                <p>Единицы измерения</p>
                             </div>
                         </div>
                         <div class="notifications-block">
@@ -1035,6 +1149,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="confidentiality-block">
+                            <div class="tab-background d-f ai-c">
+                                <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
+                                <p>Конфиденциальность</p>
+                            </div>
+                        </div>
                         <div class="blog">
                             <div class="tab-background d-f ai-c">
                                 <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
@@ -1060,12 +1180,30 @@
                                             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                     </div>
                                     <div class="blog-messenger d-f ai-c jc-c">
-                                        <a href="#"><img class="whats-app" src="./../images/whatsapp-square-brands.svg" alt="image description"></a>
-                                        <a href="#"><img src="./../images/facebook-messenger-brands.svg" alt="image description"></a>
-                                        <a href="#"><img src="./../images/facebook-brands.svg" alt="image description"></a>
-                                        <a href="#"><img src="./../images/pinterest-brands.svg" alt="image description"></a>
+                                        <a href="https://web.whatsapp.com/" class="d-f jc-c ai-c"><img src="./../images/whatsapp-white.svg" alt="image description"></a>
+                                        <a href="https://www.facebook.com/messages/" class="d-f jc-c ai-c"><img src="./../images/facebook-messenger-white.svg" alt="image description"></a>
+                                        <a href="https://www.facebook.com/" class="d-f jc-c ai-c"><img src="./../images/facebook-white.svg" alt="image description"></a>
+                                        <a href="https://www.pinterest.com/" class="d-f jc-c ai-c"><img src="./../images/pinterest-white.svg" alt="image description"></a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="support-feedback_block">
+                            <div class="tab-background d-f ai-c">
+                                <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
+                                <p>Поддержка и обратная связь</p>
+                            </div>
+                        </div>
+                        <div class="terms-conditions_block">
+                            <div class="tab-background d-f ai-c">
+                                <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
+                                <p>Правила и условия</p>
+                            </div>
+                        </div>
+                        <div class="exit-block">
+                            <div class="tab-background d-f ai-c">
+                                <img class="arrow-back" src="./../images/arrow-white.svg" alt="image description">
+                                <p>Выход</p>
                             </div>
                         </div>
                         <div class="change-norma-blog">

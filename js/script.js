@@ -150,6 +150,7 @@ function clockWise(lineHeight, $ele, callback) {
     }
 }
 
+
 // JS for project
 window.onload = function() {
     var CLIENT_ID = '66126975871-52kguv9dnrlt24l8rc46thadbd4ll50f';
@@ -193,6 +194,16 @@ window.onload = function() {
         })
     }
 
+    // const addEat = document.querySelectorAll('.add-eat a')
+    //
+    // for (let i = 0; i <= addEat.length; i++){
+    //     if (addEat[i]){
+    //             addEat[i].addEventListener('click', function () {
+    //                 document.querySelector('#add-program').display = 'block'
+    //             })
+    //     }
+    // }
+
     if (document.querySelector('.registration-photo input')) {
         document.querySelector('.registration-photo input').addEventListener('change', () => {
             document.querySelector('.registration-photo #blah').style.display = 'block';
@@ -218,10 +229,12 @@ window.onload = function() {
         })
     }
 
-    if (document.querySelector('.choose-day li')) {
-        document.querySelector('.choose-day li').addEventListener('click', () => {
-            document.querySelector('.choose-day').style.display = 'none'
-        })
+    for (let i=0; i <= document.querySelectorAll('.choose-day li').length; i++){
+        if (document.querySelectorAll('.choose-day li')[i]) {
+            document.querySelectorAll('.choose-day li')[i].addEventListener('click', () => {
+                document.querySelector('.choose-day').style.display = 'none'
+            })
+        }
     }
 
     // const inputBirth = document.querySelector('.input-data-birthday');
@@ -731,6 +744,7 @@ window.onload = function() {
 
             }
         }
+    }
 
         var myPiechart = new Piechart(
             {
@@ -811,28 +825,29 @@ window.onload = function() {
         );
         myDougnutChart.draw();
 
-        $(".regular").slick({
-            dots: false,
-            arrows: false,
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 925,
-                    settings: {
-                        slidesToShow: 2
+        $('.ui-tabs-tab').on('click', function () {
+            $(".regular").not('.slick-initialized').slick({
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 925,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 530,
+                        settings: {
+                            slidesToShow: 1
+                        }
                     }
-                },
-                {
-                    breakpoint: 530,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
-    }
+                ]
+            });
+        })
 
     const settingsProfile = document.querySelector('.settings')
     if (settingsProfile){
@@ -919,6 +934,76 @@ window.onload = function() {
         })
     }
 
+    const openUnits = document.querySelector('.unit')
+    if (openUnits){
+        openUnits.addEventListener('click', function () {
+            document.querySelector('.units-block').style.display = 'block'
+        })
+    }
+
+    const closeUnits = document.querySelector('.units-block .arrow-back')
+    if (closeUnits){
+        closeUnits.addEventListener('click', function () {
+            document.querySelector('.units-block').style.display = 'none'
+        })
+    }
+
+    const openConf = document.querySelector('.confidentiality')
+    if (openConf){
+        openConf.addEventListener('click', function () {
+            document.querySelector('.confidentiality-block').style.display = 'block'
+        })
+    }
+
+    const closeConf = document.querySelector('.confidentiality-block .arrow-back')
+    if (closeConf){
+        closeConf.addEventListener('click', function () {
+            document.querySelector('.confidentiality-block').style.display = 'none'
+        })
+    }
+
+    const openFeedback = document.querySelector('.support-feedback')
+    if (openFeedback){
+        openFeedback.addEventListener('click', function () {
+            document.querySelector('.support-feedback_block').style.display = 'block'
+        })
+    }
+
+    const closeFeedback = document.querySelector('.support-feedback_block .arrow-back')
+    if (closeFeedback){
+        closeFeedback.addEventListener('click', function () {
+            document.querySelector('.support-feedback_block').style.display = 'none'
+        })
+    }
+
+    const openRules = document.querySelector('.terms-conditions')
+    if (openRules){
+        openRules.addEventListener('click', function () {
+            document.querySelector('.terms-conditions_block').style.display = 'block'
+        })
+    }
+
+    const closeRules = document.querySelector('.terms-conditions_block .arrow-back')
+    if (closeRules){
+        closeRules.addEventListener('click', function () {
+            document.querySelector('.terms-conditions_block').style.display = 'none'
+        })
+    }
+
+    const openExit = document.querySelector('.exit')
+    if (openExit){
+        openExit.addEventListener('click', function () {
+            document.querySelector('.exit-block').style.display = 'block'
+        })
+    }
+
+    const closeExit = document.querySelector('.exit-block .arrow-back')
+    if (closeExit){
+        closeExit.addEventListener('click', function () {
+            document.querySelector('.exit-block').style.display = 'none'
+        })
+    }
+
     const blog = document.querySelector('.runtastic-blog')
     if (blog){
         blog.addEventListener('click', function () {
@@ -947,13 +1032,18 @@ window.onload = function() {
         })
     }
 
-    let i = document.querySelector('.change-norma-blog input[type=range]'),
-        o = document.querySelector('.change-norma-blog output');
+    let changeNormaBlog = document.querySelector('.change-norma-blog input[type=range]'),
+        changeNormaOutput = document.querySelector('.change-norma-blog output');
 
-    o.innerHTML = i.value;
-    i.addEventListener('change', function () {
-        o.innerHTML = i.value;
-    }, false);
+    if(changeNormaOutput){
+        changeNormaOutput.innerHTML = changeNormaBlog.value;
+    }
+
+    if (changeNormaBlog){
+        changeNormaBlog.addEventListener('change', function () {
+            changeNormaOutput.innerHTML = changeNormaBlog.value;
+        }, false);
+    }
 
 
     const rangeColor = document.querySelector('.change-range input[type=range]::-webkit-slider-thumb')
@@ -962,52 +1052,54 @@ window.onload = function() {
         speed = 5,
         currValue, rafID;
 
+    if (inputRange) {
+        inputRange.min = 0;
+        inputRange.max = maxValue;
 
-    inputRange.min = 0;
-    inputRange.max = maxValue;
 // handle range animation
-    function animateHandler() {n
-        var transX = currValue - maxValue;
-        inputRange.value = currValue;
-        if (this.value < 1029) {
-            inputRange.classList.remove('red');
-            inputRange.classList.remove('yellow');
-            inputRange.classList.add('green');
+        function animateHandler() {
+            var transX = currValue - maxValue;
+            inputRange.value = currValue;
+            if (this.value < 1029) {
+                inputRange.classList.remove('red');
+                inputRange.classList.remove('yellow');
+                inputRange.classList.add('green');
+            }
+            if (this.value > 1029 && this.value < 2223) {
+                inputRange.classList.remove('green');
+                inputRange.classList.remove('red');
+                inputRange.classList.add('yellow');
+            }
+            if (this.value > 2223 && this.value < 3000) {
+                inputRange.classList.remove('green');
+                inputRange.classList.add('red');
+                inputRange.classList.remove('yellow');
+            }
+            if (currValue > -1) {
+                window.requestAnimationFrame(animateHandler);
+            }
+            currValue = currValue - speed;
         }
-        if (this.value > 1029 && this.value < 2223) {
-            inputRange.classList.remove('green');
-            inputRange.classList.remove('red');
-            inputRange.classList.add('yellow');
-        }
-        if (this.value > 2223 && this.value < 3000) {
-            inputRange.classList.remove('green');
-            inputRange.classList.add('red');
-            inputRange.classList.remove('yellow');
-        }
-        if(currValue > -1) {
-            window.requestAnimationFrame(animateHandler);
-        }
-        currValue = currValue - speed;
-    }
-    inputRange.addEventListener('change', function() {
-        //Change slide thumb color on way down
-        if (this.value < 1029) {
-            inputRange.classList.remove('red');
-            inputRange.classList.remove('yellow');
-            inputRange.classList.add('green');
-        }
-        if (this.value > 1029 && this.value < 2223) {
-            inputRange.classList.remove('green');
-            inputRange.classList.remove('red');
-            inputRange.classList.add('yellow');
-        }
-        if (this.value > 2223 && this.value < 3000) {
-            inputRange.classList.remove('green');
-            inputRange.classList.add('red');
-            inputRange.classList.remove('yellow');
-        }
-    });
 
+        inputRange.addEventListener('change', function () {
+            //Change slide thumb color on way down
+            if (this.value < 1029) {
+                inputRange.classList.remove('red');
+                inputRange.classList.remove('yellow');
+                inputRange.classList.add('green');
+            }
+            if (this.value > 1029 && this.value < 2223) {
+                inputRange.classList.remove('green');
+                inputRange.classList.remove('red');
+                inputRange.classList.add('yellow');
+            }
+            if (this.value > 2223 && this.value < 3000) {
+                inputRange.classList.remove('green');
+                inputRange.classList.add('red');
+                inputRange.classList.remove('yellow');
+            }
+        });
+    }
 }
 
 

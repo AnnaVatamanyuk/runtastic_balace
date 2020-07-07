@@ -43,63 +43,66 @@
                             <input id="gender-woman" type="radio" name="gender" value="woman">
                             <label class="choose-woman" for="gender-woman">Женский</label>
                         </div>
-                         <label>
-                             <input type="text" autocomplete="off" name="person-birthday" data-birthday="modal-data-birthday" class="form-control input-param" placeholder="Дата рождения" />
-                         </label>
-                        <div class="overlay modal-data-birthday">
-                            <div class="modal-data d-f fd-c jc-sb">
-                                <p class="p">Дата рождения</p>
-                                <div class="overlay-block d-f jc-c ai-c">
-                                    <div style="width: 70px" id="day-picker"></div>
-                                    <div style="width: 100px" id="month-picker"></div>
-                                    <div style="width: 100px" id="year-picker"></div>
-                                </div>
-                                <div class="box-confirm-birthday d-f jc-fe">
-                                    <button class="button-form button-cancel">Отменa</button>
-                                    <button class="button-form button-birthday button-confirm">Выбрать</button>
-                                </div>
-                            </div>
-                        </div>
-                         <label>
-                             <input data-height="modal-data-height" autocomplete="off" type="text" placeholder="рост" name="person-height" class="input-param form-control">
-                         </label>
-                        <div class="overlay modal-data modal-data-height">
-                            <div class="modal-data d-f fd-c jc-sb">
-                                <p class="p">Рост</p>
-                                <div class="overlay-block ai-c d-f jc-c">
-                                    <div style="width:90px" id="height-picker"></div>
-                                    <span class="metrics-sm">cm</span>
-                                </div>
-                                <div class="modal-data-footer box-confirm-height d-f jc-sb">
-                                    <button type="button" class="button-form metrics-fut">ФУТЫ</button>
-                                    <div>
-                                        <button class="button-form button-cancel">отменa</button>
-                                        <button class="button-form button-height button-confirm">выбрать</button>
+                        <div class="label-position">
+                            <label> Дата рождения</label>
+                                <input type="text" autocomplete="off" name="person-birthday" data-birthday="modal-data-birthday" class="form-control input-param" placeholder="00.00.0000" />
+                            <div class="overlay modal-data-birthday">
+                                <div class="modal-data d-f fd-c jc-sb">
+                                    <p class="p">Дата рождения</p>
+                                    <div class="overlay-block d-f jc-c ai-c">
+                                        <div style="width: 70px" id="day-picker"></div>
+                                        <div style="width: 100px" id="month-picker"></div>
+                                        <div style="width: 100px" id="year-picker"></div>
+                                    </div>
+                                    <div class="box-confirm-birthday d-f jc-fe">
+                                        <button class="button-form button-cancel">Отменa</button>
+                                        <button class="button-form button-birthday button-confirm">Выбрать</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                         <label>
-                             <input data-weight="modal-data-weight" autocomplete="off" type="text" name="person-weight" placeholder="текущий вес" class="input-param form-control">
-                         </label>
-                        <div class="overlay modal-data modal-data-weight">
-                            <div class="modal-data d-f fd-c jc-sb">
-                                <p class="p">Вес</p>
-                                <div class="overlay-block d-f ai-c jc-c">
-                                    <div style="width: 140px" id="kg-picker"></div>
-                                    <span class="metrics-kg">kg</span>
-                                    <div style="width: 90px" id="g-picker"></div>
-                                    <span class="metrics-g">g</span>
-                                </div>
-                                <div class="modal-data-footer box-confirm-weight d-f jc-sb">
-                                    <button type="button" class="button-form metrics-funt">ФУНТЫ</button>
-                                    <div>
-                                        <button class="button-form button-cancel">отменa</button>
-                                        <button class="button-form button-weight button-confirm">выбрать</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                         <div class="label-position">
+                             <label>Рост</label>
+                                 <input data-height="modal-data-height" autocomplete="off" type="text" placeholder="100cm" name="person-height" class="input-param form-control">
+                             <div class="overlay modal-data-height">
+                                 <div class="modal-data d-f fd-c jc-sb">
+                                     <p class="p">Рост</p>
+                                     <div class="overlay-block ai-c d-f jc-c">
+                                         <div style="width:90px" id="height-picker"></div>
+                                         <span class="metrics-sm">cm</span>
+                                     </div>
+                                     <div class="modal-data-footer box-confirm-height d-f jc-sb">
+                                         <button type="button" class="button-form metrics-fut">ФУТЫ</button>
+                                         <div>
+                                             <button class="button-form button-cancel">отменa</button>
+                                             <button class="button-form button-height button-confirm">выбрать</button>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="label-position">
+                             <label>текущий вес </label>
+                                 <input data-weight="modal-data-weight" autocomplete="off" type="text" name="person-weight" placeholder="40 kg" class="input-param form-control">
+                             <div class="overlay modal-data-weight">
+                                 <div class="modal-data d-f fd-c jc-sb">
+                                     <p class="p">Вес</p>
+                                     <div class="overlay-block d-f ai-c jc-c">
+                                         <div style="width: 140px" id="kg-picker"></div>
+                                         <span class="metrics-kg">kg</span>
+                                         <div style="width: 90px" id="g-picker"></div>
+                                         <span class="metrics-g">g</span>
+                                     </div>
+                                     <div class="modal-data-footer box-confirm-weight d-f jc-sb">
+                                         <button type="button" class="button-form metrics-funt">ФУНТЫ</button>
+                                         <div>
+                                             <button class="button-form button-cancel">отменa</button>
+                                             <button class="button-form button-weight button-confirm">выбрать</button>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
                     </form>
                     <button class="btn btn-next button-antrop" disabled><a href="tpl/recommended.html">Продолжить</a></button>
                     </div>
