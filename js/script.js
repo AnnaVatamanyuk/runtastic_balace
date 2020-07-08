@@ -194,16 +194,6 @@ window.onload = function() {
         })
     }
 
-    // const addEat = document.querySelectorAll('.add-eat a')
-    //
-    // for (let i = 0; i <= addEat.length; i++){
-    //     if (addEat[i]){
-    //             addEat[i].addEventListener('click', function () {
-    //                 document.querySelector('#add-program').display = 'block'
-    //             })
-    //     }
-    // }
-
     if (document.querySelector('.registration-photo input')) {
         document.querySelector('.registration-photo input').addEventListener('change', () => {
             document.querySelector('.registration-photo #blah').style.display = 'block';
@@ -229,7 +219,19 @@ window.onload = function() {
         })
     }
 
-    for (let i=0; i <= document.querySelectorAll('.choose-day li').length; i++){
+    if (document.querySelector('.friends .container')) {
+        document.querySelector('.friends .container').addEventListener('click', function () {
+            document.querySelector('.add-friends').style.display = 'block'
+        })
+    }
+
+    if (document.querySelector('.add-friends .arrow-back')) {
+        document.querySelector('.add-friends .arrow-back').addEventListener('click', function () {
+            document.querySelector('.add-friends').style.display = 'none'
+        })
+    }
+
+    for (let i = 0; i <= document.querySelectorAll('.choose-day li').length; i++) {
         if (document.querySelectorAll('.choose-day li')[i]) {
             document.querySelectorAll('.choose-day li')[i].addEventListener('click', () => {
                 document.querySelector('.choose-day').style.display = 'none'
@@ -238,21 +240,18 @@ window.onload = function() {
     }
 
     const addEat = document.querySelectorAll('.add-eat a')
-    for (let i = 0; i <= addEat.length; i++){
-        if (addEat[i]){
+    for (let i = 0; i <= addEat.length; i++) {
+        if (addEat[i]) {
             addEat[i].addEventListener('click', function () {
-                $( "#tabs-block_holder" ).tabs({ active: 2});
+                $("#tabs-block_holder").tabs({active: 2});
             })
         }
     }
 
-    // const inputBirth = document.querySelector('.input-data-birthday');
-    // const selectHeight = document.querySelector('#input-data-height');
-    // const selectWeight = document.querySelector('#input-data-weight');
     const weightGr = document.querySelector('#g-picker');
 
     const btnChancelAll = document.querySelectorAll('.button-cancel');
-    if (btnChancelAll){
+    if (btnChancelAll) {
         btnChancelAll.forEach(element => {
             element.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -261,8 +260,8 @@ window.onload = function() {
         });
     }
     const inpPersonBirthday = document.querySelector('[ name="person-birthday"]');
-    if (inpPersonBirthday){
-        inpPersonBirthday.addEventListener('click' , () =>{
+    if (inpPersonBirthday) {
+        inpPersonBirthday.addEventListener('click', () => {
             document.querySelector('.modal-data-birthday').style.display = 'block';
         })
     }
@@ -277,7 +276,7 @@ window.onload = function() {
 
     $(document).ready(function () {
         var days = [];
-        for(let i = 1; i <=31; i++) {
+        for (let i = 1; i <= 31; i++) {
             days.push(i);
         }
 
@@ -310,7 +309,7 @@ window.onload = function() {
             birthDate.month = s + 1;
         });
         var years = [];
-        for(let i = new Date().getFullYear() - 100; i <= new Date().getFullYear() + 100; i++) {
+        for (let i = new Date().getFullYear() - 100; i <= new Date().getFullYear() + 100; i++) {
             years.push(i);
         }
         $("#year-picker").picker({
@@ -350,7 +349,7 @@ window.onload = function() {
 
     $(document).ready(function () {
         let yourHeight = [];
-        for(let i = 100; i <= 250; i++) {
+        for (let i = 100; i <= 250; i++) {
             yourHeight.push(i);
         }
 
@@ -364,13 +363,13 @@ window.onload = function() {
     });
 
     let chooseHeight = 'см';
-    if (inpPersonHeight){
-        inpPersonHeight.addEventListener('click', function() {
+    if (inpPersonHeight) {
+        inpPersonHeight.addEventListener('click', function () {
             document.querySelector('.modal-data-height').style.display = 'block'
             if (fut) {
                 fut.addEventListener('click', function () {
 
-                    if (chooseHeight === 'см'){
+                    if (chooseHeight === 'см') {
                         chooseHeight = 'ʼ';
                         futText.textContent = 'фут';
                     } else {
@@ -388,7 +387,7 @@ window.onload = function() {
             inpPersonHeight.value = '';
             inpPersonHeight.value = `${heightPerson.yourHeight} ${chooseHeight}`;
             // objCcal.height = +selectHeight.value;
-             inpPersonHeight.classList.remove('error');
+            inpPersonHeight.classList.remove('error');
             if (heightPerson.yourHeight !== '') {
                 document.querySelector('.modal-data-height').style.display = 'none'
             }
@@ -409,11 +408,11 @@ window.onload = function() {
         let kgWeight = [];
         let gWeight = [];
 
-        for(let i = 40; i <= 300; i++) {
+        for (let i = 40; i <= 300; i++) {
             kgWeight.push(i);
         }
 
-        for(let j = 100; j <= 999; j++) {
+        for (let j = 100; j <= 999; j++) {
             gWeight.push(j);
         }
 
@@ -434,12 +433,12 @@ window.onload = function() {
     });
 
     let units = 'kg';
-    if (inpPersonWeight){
-        inpPersonWeight.addEventListener('click', function() {
+    if (inpPersonWeight) {
+        inpPersonWeight.addEventListener('click', function () {
             document.querySelector('.modal-data-weight').style.display = 'block'
             if (funt) {
                 funt.addEventListener('click', function () {
-                    if (units === 'kg'){
+                    if (units === 'kg') {
                         units = 'bl';
                         funtText.textContent = 'bl';
                         gText.style.display = 'none'
@@ -460,7 +459,7 @@ window.onload = function() {
         buttonWeight.addEventListener('click', function (e) {
             e.preventDefault();
             inpPersonWeight.value = '';
-            if (units === 'kg'){
+            if (units === 'kg') {
                 inpPersonWeight.value = `${weightPerson.kgWeight}.${weightPerson.gWeight} ${units}`;
             } else {
                 inpPersonWeight.value = `${weightPerson.kgWeight} ${units}`;
@@ -492,9 +491,9 @@ window.onload = function() {
     }
 
     $("#AddImage").change(function () {
-    $('#blah').attr('src', "");
-    readURL(this);
-});
+        $('#blah').attr('src', "");
+        readURL(this);
+    });
 
     function handle_fb_data(response) {
         FB.api('/me', function (response) {
@@ -664,8 +663,7 @@ window.onload = function() {
     }
 
     $(function () {
-        $('#tabs-block_holder').tabs({
-        });
+        $('#tabs-block_holder').tabs({});
     });
 
     $(function () {
@@ -674,7 +672,7 @@ window.onload = function() {
         });
     });
 
-    $(function(){
+    $(function () {
         $('.circlestat').circliful();
     });
 
@@ -755,140 +753,140 @@ window.onload = function() {
         }
     }
 
-        var myPiechart = new Piechart(
-            {
-                canvas: myCanvas,
-                data: myVinyls,
-                colors: ["#e04a5f", "#68397d", "#f28618"]
+    var myPiechart = new Piechart(
+        {
+            canvas: myCanvas,
+            data: myVinyls,
+            colors: ["#e04a5f", "#68397d", "#f28618"]
+        }
+    );
+    myPiechart.draw();
+
+    var Piechart = function (options) {
+        this.options = options;
+        this.canvas = options.canvas;
+        this.ctx = this.canvas.getContext("2d");
+        this.colors = options.colors;
+
+        this.draw = function () {
+            var total_value = 0;
+            var color_index = 0;
+            for (var categ in this.options.data) {
+                var val = this.options.data[categ];
+                total_value += val;
             }
-        );
-        myPiechart.draw();
 
-        var Piechart = function (options) {
-            this.options = options;
-            this.canvas = options.canvas;
-            this.ctx = this.canvas.getContext("2d");
-            this.colors = options.colors;
+            var start_angle = 0;
+            for (categ in this.options.data) {
+                val = this.options.data[categ];
+                var slice_angle = 2 * Math.PI * val / total_value;
 
-            this.draw = function () {
-                var total_value = 0;
-                var color_index = 0;
-                for (var categ in this.options.data) {
-                    var val = this.options.data[categ];
-                    total_value += val;
-                }
+                drawPieSlice(
+                    this.ctx,
+                    this.canvas.width / 2,
+                    this.canvas.height / 2,
+                    Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                    start_angle,
+                    start_angle + slice_angle,
+                    this.colors[color_index % this.colors.length]
+                );
 
-                var start_angle = 0;
+                start_angle += slice_angle;
+                color_index++;
+            }
+
+            //drawing a white circle over the chart
+            //to create the doughnut chart
+            if (this.options.doughnutHoleSize) {
+                drawPieSlice(
+                    this.ctx,
+                    this.canvas.width / 2,
+                    this.canvas.height / 2,
+                    this.options.doughnutHoleSize * Math.min(this.canvas.width / 2, this.canvas.height / 2),
+                    0,
+                    2 * Math.PI,
+                    "#fff"
+                );
+            }
+
+            if (this.options.legend) {
+                color_index = 0;
+                var legendHTML = "";
                 for (categ in this.options.data) {
-                    val = this.options.data[categ];
-                    var slice_angle = 2 * Math.PI * val / total_value;
-
-                    drawPieSlice(
-                        this.ctx,
-                        this.canvas.width / 2,
-                        this.canvas.height / 2,
-                        Math.min(this.canvas.width / 2, this.canvas.height / 2),
-                        start_angle,
-                        start_angle + slice_angle,
-                        this.colors[color_index % this.colors.length]
-                    );
-
-                    start_angle += slice_angle;
-                    color_index++;
+                    legendHTML += "<div><span style='display:inline-block;width:20px;background-color:" + this.colors[color_index++] + ";'>&nbsp;</span> " + categ + "</div>";
                 }
-
-                //drawing a white circle over the chart
-                //to create the doughnut chart
-                if (this.options.doughnutHoleSize) {
-                    drawPieSlice(
-                        this.ctx,
-                        this.canvas.width / 2,
-                        this.canvas.height / 2,
-                        this.options.doughnutHoleSize * Math.min(this.canvas.width / 2, this.canvas.height / 2),
-                        0,
-                        2 * Math.PI,
-                        "#fff"
-                    );
-                }
-
-                if (this.options.legend) {
-                    color_index = 0;
-                    var legendHTML = "";
-                    for (categ in this.options.data) {
-                        legendHTML += "<div><span style='display:inline-block;width:20px;background-color:" + this.colors[color_index++] + ";'>&nbsp;</span> " + categ + "</div>";
-                    }
-                    this.options.legend.innerHTML = legendHTML;
-                }
+                this.options.legend.innerHTML = legendHTML;
             }
         }
+    }
 
-        var myDougnutChart = new Piechart(
-            {
-                canvas: myCanvas,
-                data: myVinyls,
-                colors: ["#e04a5f", "#68397d", "#f28618"],
-                doughnutHoleSize: 0.5,
-                legend: myLegend
+    var myDougnutChart = new Piechart(
+        {
+            canvas: myCanvas,
+            data: myVinyls,
+            colors: ["#e04a5f", "#68397d", "#f28618"],
+            doughnutHoleSize: 0.5,
+            legend: myLegend
 
-            }
-        );
-        myDougnutChart.draw();
+        }
+    );
+    myDougnutChart.draw();
 
-        $('.ui-tabs-tab').on('click', function () {
-            $(".regular").not('.slick-initialized').slick({
-                dots: false,
-                arrows: false,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [
-                    {
-                        breakpoint: 925,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    },
-                    {
-                        breakpoint: 530,
-                        settings: {
-                            slidesToShow: 1
-                        }
+    $('.ui-tabs-tab').on('click', function () {
+        $(".regular").not('.slick-initialized').slick({
+            dots: false,
+            arrows: false,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                {
+                    breakpoint: 925,
+                    settings: {
+                        slidesToShow: 2
                     }
-                ]
-            });
-        })
+                },
+                {
+                    breakpoint: 530,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    })
 
     const settingsProfile = document.querySelector('.settings')
-    if (settingsProfile){
+    if (settingsProfile) {
         settingsProfile.addEventListener('click', function () {
-                document.querySelector('.settings-menu').style.display = 'block'
+            document.querySelector('.settings-menu').style.display = 'block'
         })
     }
 
     const backToSettings = document.querySelector('.settings-menu .arrow-back')
-    if (backToSettings){
+    if (backToSettings) {
         backToSettings.addEventListener('click', function () {
             document.querySelector('.settings-menu').style.display = 'none'
         })
     }
 
     const notificationButton = document.querySelector('.notification-button')
-    if (notificationButton){
+    if (notificationButton) {
         notificationButton.addEventListener('click', function () {
             document.querySelector('.notifications-block').style.display = 'block'
         })
     }
 
     const closeNotification = document.querySelector('.notifications-block .arrow-back')
-    if (closeNotification){
+    if (closeNotification) {
         closeNotification.addEventListener('click', function () {
             document.querySelector('.notifications-block').style.display = 'none'
         })
     }
 
     const chooseWorkout = document.querySelectorAll('.choose-workout')
-    if (chooseWorkout){
-        for (let i = 0; i < chooseWorkout.length; i++){
+    if (chooseWorkout) {
+        for (let i = 0; i < chooseWorkout.length; i++) {
             chooseWorkout[i].addEventListener('click', function () {
                 document.querySelector('.choose-training').style.display = 'block';
             })
@@ -896,146 +894,146 @@ window.onload = function() {
     }
 
     const closeChooseWorkout = document.querySelector('.choose-training .arrow-back')
-    if (closeChooseWorkout){
+    if (closeChooseWorkout) {
         closeChooseWorkout.addEventListener('click', function () {
             document.querySelector('.choose-training').style.display = 'none'
         })
     }
     const addTraining = document.querySelector('.add-training')
-    if (addTraining){
+    if (addTraining) {
         addTraining.addEventListener('click', function () {
             document.querySelector('.choose-training').style.display = 'none'
         })
     }
 
     const moreTraining = document.querySelector('.more-training')
-    if (moreTraining){
+    if (moreTraining) {
         moreTraining.addEventListener('click', function () {
             document.querySelector('.training-list').style.display = 'block'
         })
     }
 
     const closeTraining = document.querySelector('.training-list .arrow-back')
-    if (closeTraining){
+    if (closeTraining) {
         closeTraining.addEventListener('click', function () {
             document.querySelector('.training-list').style.display = 'none'
         })
     }
 
     const searchTraining = document.querySelector('.button-search-training')
-    if (searchTraining){
+    if (searchTraining) {
         searchTraining.addEventListener('click', function () {
             document.querySelector('.search-training').style.display = 'block'
         })
     }
 
     const openProfile = document.querySelector('.profile')
-    if (openProfile){
+    if (openProfile) {
         openProfile.addEventListener('click', function () {
             document.querySelector('.profile-block').style.display = 'block'
         })
     }
 
     const closeProfile = document.querySelector('.profile-block .arrow-back')
-    if (closeProfile){
+    if (closeProfile) {
         closeProfile.addEventListener('click', function () {
             document.querySelector('.profile-block').style.display = 'none'
         })
     }
 
     const openUnits = document.querySelector('.unit')
-    if (openUnits){
+    if (openUnits) {
         openUnits.addEventListener('click', function () {
             document.querySelector('.units-block').style.display = 'block'
         })
     }
 
     const closeUnits = document.querySelector('.units-block .arrow-back')
-    if (closeUnits){
+    if (closeUnits) {
         closeUnits.addEventListener('click', function () {
             document.querySelector('.units-block').style.display = 'none'
         })
     }
 
     const openConf = document.querySelector('.confidentiality')
-    if (openConf){
+    if (openConf) {
         openConf.addEventListener('click', function () {
             document.querySelector('.confidentiality-block').style.display = 'block'
         })
     }
 
     const closeConf = document.querySelector('.confidentiality-block .arrow-back')
-    if (closeConf){
+    if (closeConf) {
         closeConf.addEventListener('click', function () {
             document.querySelector('.confidentiality-block').style.display = 'none'
         })
     }
 
     const openFeedback = document.querySelector('.support-feedback')
-    if (openFeedback){
+    if (openFeedback) {
         openFeedback.addEventListener('click', function () {
             document.querySelector('.support-feedback_block').style.display = 'block'
         })
     }
 
     const closeFeedback = document.querySelector('.support-feedback_block .arrow-back')
-    if (closeFeedback){
+    if (closeFeedback) {
         closeFeedback.addEventListener('click', function () {
             document.querySelector('.support-feedback_block').style.display = 'none'
         })
     }
 
     const openRules = document.querySelector('.terms-conditions')
-    if (openRules){
+    if (openRules) {
         openRules.addEventListener('click', function () {
             document.querySelector('.terms-conditions_block').style.display = 'block'
         })
     }
 
     const closeRules = document.querySelector('.terms-conditions_block .arrow-back')
-    if (closeRules){
+    if (closeRules) {
         closeRules.addEventListener('click', function () {
             document.querySelector('.terms-conditions_block').style.display = 'none'
         })
     }
 
     const openExit = document.querySelector('.exit')
-    if (openExit){
+    if (openExit) {
         openExit.addEventListener('click', function () {
             document.querySelector('.exit-block').style.display = 'block'
         })
     }
 
     const closeExit = document.querySelector('.exit-block .arrow-back')
-    if (closeExit){
+    if (closeExit) {
         closeExit.addEventListener('click', function () {
             document.querySelector('.exit-block').style.display = 'none'
         })
     }
 
     const blog = document.querySelector('.runtastic-blog')
-    if (blog){
+    if (blog) {
         blog.addEventListener('click', function () {
             document.querySelector('.blog').style.display = 'block'
         })
     }
 
     const closeBlog = document.querySelector('.blog .arrow-back')
-    if (closeBlog){
+    if (closeBlog) {
         closeBlog.addEventListener('click', function () {
             document.querySelector('.blog').style.display = 'none'
         })
     }
 
     const normaCalories = document.querySelector('.calories-norma-title p');
-    if (normaCalories){
+    if (normaCalories) {
         normaCalories.addEventListener('click', function () {
             document.querySelector('.change-norma-blog').style.display = 'block'
         })
     }
 
     const saveBtn = document.querySelector('.save-btn');
-    if (saveBtn){
+    if (saveBtn) {
         saveBtn.addEventListener('click', function () {
             document.querySelector('.change-norma-blog').style.display = 'none'
         })
@@ -1044,11 +1042,11 @@ window.onload = function() {
     let changeNormaBlog = document.querySelector('.change-norma-blog input[type=range]'),
         changeNormaOutput = document.querySelector('.change-norma-blog output');
 
-    if(changeNormaOutput){
+    if (changeNormaOutput) {
         changeNormaOutput.innerHTML = changeNormaBlog.value;
     }
 
-    if (changeNormaBlog){
+    if (changeNormaBlog) {
         changeNormaBlog.addEventListener('change', function () {
             changeNormaOutput.innerHTML = changeNormaBlog.value;
         }, false);
@@ -1179,18 +1177,17 @@ window.onload = function() {
             let trainingFilter = [];
             if (param && param !== '') {
                 param.toLowerCase();
-                for (let i =0; i < trainingName.length; i++){
-                   if (trainingName[i].name.includes(param)){
-                       trainingFilter.push(trainingName[i])
-                   }
+                for (let i = 0; i < trainingName.length; i++) {
+                    if (trainingName[i].name.includes(param)) {
+                        trainingFilter.push(trainingName[i])
+                    }
                 }
             } else {
                 trainingFilter = trainingName;
             }
             trainingListBlock.empty();
 
-            for (let j = 0; j < trainingFilter.length; j++){
-                console.log(trainingFilter[j].name)
+            for (let j = 0; j < trainingFilter.length; j++) {
                 trainingListBlock.append(`<li class="box d-f ai-c">
                                         <input type="checkbox" id="skiing">
                                         <span class="check"></span>
@@ -1202,12 +1199,83 @@ window.onload = function() {
 
         autocompleteTraining();
 
-        document.querySelector('.search-training').onchange = function () {
-            console.log(searchTrainingInput.value)
+        document.querySelector('.search-training').oninput = function () {
             autocompleteTraining(searchTrainingInput.value)
         }
-        console.log(searchTrainingInput)
     }
+
+    const searchFriends = document.querySelector('#search-friends');
+    const friendsList = jQuery('.add-friends ul')
+
+    let friendsArray = [
+        {
+            name: 'Евгений',
+            firstName: 'Иваненко'
+        },
+        {
+            name: 'Олег',
+            firstName: 'Пренткович'
+        },
+        {
+            name: 'Виктор',
+
+            firstName: 'Френдий'
+        },
+        {
+            name: 'Алла',
+            firstName: 'Мельник'
+        },
+        {
+            name: 'Лариса',
+            firstName: 'Куфлей'
+        }
+    ];
+
+    function autocompleteFriends(param) {
+        let friendsFilter = [];
+        if (param && param !== '') {
+            param.toLowerCase();
+            for (let i = 0; i < friendsArray.length; i++) {
+                if (friendsArray[i].name.includes(param) || friendsArray[i].firstName.includes(param)) {
+                    friendsFilter.push(friendsArray[i])
+                }
+            }
+        } else {
+            friendsFilter = friendsArray;
+        }
+        friendsList.empty();
+
+        for (let j = 0; j < friendsFilter.length; j++) {
+            friendsList.append(`<li class="friends-info d-f ai-c">
+                                    <div class="friends-img"></div>
+                                    <div class="friends-text">${friendsFilter[j].firstName} ${friendsFilter[j].name}</div>
+                                </li>`)
+        }
+    }
+
+    autocompleteFriends();
+
+    document.querySelector('#search-friends').oninput = function () {
+        autocompleteFriends(searchFriends.value)
+    }
+
+    if (document.querySelector('#news .tab-background img')) {
+        document.querySelector('#news .tab-background img').addEventListener('click', function () {
+            $("#tabs-block_holder").tabs({
+                active: 4,
+                activate: jQuery('.add-friends').show()
+            })
+        })
+    }
+
+    // $(function(){
+    //     $("#datepicker").datepicker({
+    //         showOn: "button",
+    //         buttonImage: "./../images/calendar-alt-regular.svg",
+    //         buttonImageOnly: true,
+    //         buttonText: "Выбрать дату"
+    //     });
+    // });
 }
 
 

@@ -1108,6 +1108,13 @@ ul{
     padding: 45px 0 0;
 }
 
+/*#magazine .ui-datepicker-trigger {*/
+/*    margin-left: 5px;*/
+/*    position: relative;*/
+/*    top: 3px;*/
+/*    cursor: pointer;*/
+/*}*/
+
 .tabs-days_fixed .tabs-list {
     padding: 5px 10px;
 }
@@ -2260,7 +2267,8 @@ ul{
 .confidentiality-block,
 .support-feedback_block,
 .terms-conditions_block,
-.exit-block{
+.exit-block,
+.add-friends{
     padding-top: 30px;
     display: none;
     position: absolute;
@@ -2287,7 +2295,8 @@ ul{
 .confidentiality-block .tab-background p,
 .support-feedback_block .tab-background p,
 .terms-conditions_block .tab-background p,
-.exit-block .tab-background p{
+.exit-block .tab-background p,
+.add-friends .tab-background p{
     position: relative;
     padding-left: 30px;
 }
@@ -2302,7 +2311,8 @@ ul{
 .confidentiality-block .arrow-back,
 .support-feedback_block .arrow-back,
 .terms-conditions_block .arrow-back,
-.exit-block .arrow-back{
+.exit-block .arrow-back,
+.add-friends .arrow-back{
     position: absolute;
     top: 10px;
     width: 15px;
@@ -3059,4 +3069,52 @@ ul{
 
 /*SlIDER STYLE*/
 
+/*Friends popup*/
+
+.add-friends{
+    display: none;
+}
+
+.add-friends .container {
+    padding-top: 10px;
+    background-color: #fff;
+}
+
+#search-friends::placeholder{
+    text-transform: none;
+    font-weight: normal;
+}
+
+.add-friends .form-control{
+    font-weight: normal;
+    text-transform: none;
+}
+
+#search-friends{
+    margin-bottom: 25px;
+}
+
+.add-friends ul{
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.friends-info{
+    padding: 15px;
+    box-shadow: 0 0 5px #aeaeae;
+    margin-bottom: 15px;
+}
+
+.friends-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #aeaeae;
+    border: none;
+    margin-right: 15px;
+}
+
+.friends-text{
+    color: #000;
+}
 
