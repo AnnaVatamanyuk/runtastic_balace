@@ -4,11 +4,21 @@
     box-sizing: border-box;
 }
 
+html {
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+
 body{
     font-family: Arial, sans-serif;
     font-size: 16px;
     background-color: #fff;
     position: relative;
+}
+
+::-webkit-scrollbar { /* chrome based */
+    width: 0;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
 }
 
 button{
@@ -958,6 +968,18 @@ ul{
 
 /*home page STAR*/
 
+#magazine .tab-holder{
+    padding-top: 25px;
+}
+
+#magazine,
+#add-program,
+#programs,
+#profile{
+    background-color: #fff;
+    display: none;
+}
+
 .tab-section{
     position: relative;
     height: 100vh;
@@ -975,6 +997,52 @@ ul{
     right: 0;
     background-color: #fff;
     box-shadow: 0 0 5px #aeaeae;
+}
+
+#datepicker{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 75px;
+}
+
+#ui-datepicker-div{
+    display: none;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 0 5px;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next{
+    box-shadow: 0 0 3px;
+    padding: 0 5px;
+    float: left;
+}
+
+.ui-datepicker-next{
+    margin-right: 15px;
+}
+
+.tabs-days_fixed .container:last-child{
+    overflow: hidden;
+}
+
+#makeMeScrollable{
+    overflow: scroll;
+    padding: 15px 0 0;
+}
+
+.scroll-container{
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.scroll-container > .part{
+    float: left;
+    padding: 0 10px;
 }
 
 .tabs-list {
@@ -2318,9 +2386,17 @@ ul{
     width: 15px;
 }
 
+.choose-notification,
+.terms-conditions_block,
+.units-block,
+.confidentiality-block
+{
+    padding: 30px 25px 100px;
+    background-color: #fff;
+}
+
 .settings-profile,
 .exit,
-.choose-notification,
 .training-list-block{
     padding: 30px 25px 0;
 }
@@ -2526,6 +2602,8 @@ ul{
 .training-list-block label{
     position: absolute;
     cursor: pointer;
+    top: 2px;
+    left: 2px;
 }
 
 .type-training input,
@@ -2535,13 +2613,10 @@ ul{
     position: absolute;
 }
 
-.type-training input:checked~.check{
-    border-color: #0276ce;
-    box-shadow: 0 0 0 20px #0276ce inset;
-}
-
+.type-training input:checked~.check,
 .training-list-block input:checked~.check{
     border-color: #0276ce;
+    box-shadow: 0 0 0 20px #0276ce inset;
 }
 
 .type-training input:checked~span,
@@ -2550,6 +2625,7 @@ ul{
 }
 
 .box{
+    position: relative;
     margin: 25px 15px 25px 0;
     user-select: none;
     text-align: center;
@@ -2561,8 +2637,44 @@ ul{
     font-size: 12px;
 }
 
+.calories-burned .check{
+    background-color: #0276ce;
+}
+
 .box:hover{
     color: #0276ce;
+}
+
+.training-check{
+    background-color: #53bc53;
+    border:2px solid #2e932e;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.training-check:last-child{
+    margin-right: 0;
+}
+
+.training-check img{
+    width: 15px;
+    position: absolute;
+    left: 5px;
+    top: 4px;
+}
+
+.training-check:nth-child(2) img{
+    width: 12px;
+    left: 6px;
+}
+
+.training-check:nth-child(3) img{
+    width: 20px;
+    left: 4px;
 }
 
 .check {
@@ -2574,11 +2686,7 @@ ul{
     background-color: #f1f1f1;
     box-shadow: inset 0 0 3px 0 #d0d0d0;
     transition: all 0.15s cubic-bezier(0, 1.05, 0.72, 1.07);
-}
-
-.training-list-block .check{
-    background-color: #fff;
-    box-shadow: none;
+    margin-right: 10px;
 }
 
 .check::after {
@@ -2594,11 +2702,21 @@ ul{
      transition: all 0.25s cubic-bezier(0, 1.05, 0.72, 1.07);
  }
 
-.box label img{
+.type-training .box label img {
     position: absolute;
     top: 10px;
-    left: -9px;
-    width: 15px;
+    left: 8px;
+}
+
+.type-training .box:nth-child(1) label img{
+    width: 16px;
+}
+
+.type-training .box:nth-child(2) label img{
+    width: 14px;
+}
+.type-training .box:nth-child(3) label img{
+    width: 28px;
 }
 
 .type-training button{
@@ -2639,7 +2757,7 @@ ul{
 
 .training-param input{
     color: black;
-    font-size: 10px;
+    font-size: 14px;
     text-align: right;
     padding: 10px 5px;
 }
@@ -2654,6 +2772,27 @@ ul{
     position: absolute;
     bottom: 3px;
     left: 8px;
+    font-size: 14px;
+}
+
+.training-param .form-control{
+    text-transform: none;
+}
+
+.modal-time{
+    display: none;
+}
+
+.modal-distance{
+    display: none;
+}
+
+.modal-calories{
+    display: none;
+}
+
+.modal-timer{
+    display: none;
 }
 
 .training-list{
@@ -2667,9 +2806,9 @@ ul{
 }
 
 .training-list-block .box label img{
-    top: -15px;
-    left: 4px;
-    width: 30px;
+    /*top: -18px;*/
+    /*left: 2px;*/
+    width: 36px;
 }
 
 .training-list-block .box label~span{
@@ -2697,7 +2836,7 @@ ul{
 
 .change-profile{
     background-color: #fff;
-    padding: 30px 0;
+    padding: 30px 0 100px;
 }
 
 .profile-photo{
@@ -2965,7 +3104,8 @@ ul{
     background: -webkit-linear-gradient(left, rgba(40,204,97,1) 0%,rgba(249,252,47,1) 43%,rgba(249,252,47,1) 65%,rgba(255,87,81,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, rgba(40,204,97,1) 0%,rgba(249,252,47,1) 43%,rgba(249,252,47,1) 65%,rgba(255,87,81,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28cc61', endColorstr='#ff5751',GradientType=1 );
-    height: 5px;
+    height: 10px;
+    border-radius: 8px;
 }
 
 .change-range input[type=range]:focus {
@@ -2980,17 +3120,18 @@ ul{
     background: -webkit-linear-gradient(left, rgba(40,204,97,1) 0%,rgba(249,252,47,1) 43%,rgba(249,252,47,1) 65%,rgba(255,87,81,1) 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, rgba(40,204,97,1) 0%,rgba(249,252,47,1) 43%,rgba(249,252,47,1) 65%,rgba(255,87,81,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28cc61', endColorstr='#ff5751',GradientType=1 );
-    height: 5px;
+    height: 10px;
+    border-radius: 8px;
 }
 
 .change-range input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     max-width: 80px;
     position: relative;
-    bottom: 5px;
+    bottom: 3px;
     background-color: #fff;
     border: 1px solid #53bc53;
     /*cursor: -webkit-grab;*/
@@ -3059,6 +3200,17 @@ ul{
     max-width: none;
     width: auto;
 }
+
+@media (max-width: 425px){
+    #profile .range-norma{
+        width: 285px;
+    }
+
+    #profile .save-btn {
+        padding: 10px 55px;
+    }
+
+    }
 
 @media (max-width: 375px) {
     .change-norma-blog h3{
