@@ -931,13 +931,6 @@ window.onload = function() {
         });
     });
 
-
-    // $(function () {
-    //     $('#tabs-days').tabs({
-    //         active: 2
-    //     });
-    // });
-
     $(function () {
         $('.circlestat').circliful();
     });
@@ -1548,7 +1541,7 @@ window.onload = function() {
             buttonText: "Select date",
             dateFormat: 'dd-mm-yy',
             onSelect: function(value, date) {
-                jQuery('#makeMeScrollable').scrollLeft(jQuery('#makeMeScrollable').scrollLeft() + jQuery('#day-'+ date.selectedDay).offset().left - 220);
+                jQuery('#makeMeScrollable').scrollLeft(jQuery('#makeMeScrollable').scrollLeft() + jQuery('#day-'+ date.selectedDay).offset().left - 520);
             },
             todayBtn: "linked",
             startView: 0, maxViewMode: 0,minViewMode:0
