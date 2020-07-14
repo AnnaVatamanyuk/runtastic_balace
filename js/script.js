@@ -1541,7 +1541,13 @@ window.onload = function() {
             buttonText: "Select date",
             dateFormat: 'dd-mm-yy',
             onSelect: function(value, date) {
-                jQuery('#makeMeScrollable').scrollLeft(jQuery('#makeMeScrollable').scrollLeft() + jQuery('#day-'+ date.selectedDay).offset().left - 520);
+                if (jQuery(window).width() <= 625){
+                    console.log(jQuery('#makeMeScrollable').scrollLeft())
+                    console.log(jQuery('#day-'+ date.selectedDay).offset())
+                    jQuery('#makeMeScrollable').scrollLeft(jQuery('#makeMeScrollable').scrollLeft() + jQuery('#day-'+ date.selectedDay).offset().left - 50)
+                } else{
+                    jQuery('#makeMeScrollable').scrollLeft(jQuery('#makeMeScrollable').scrollLeft() + jQuery('#day-'+ date.selectedDay).offset().left - 520);
+                }
             },
             todayBtn: "linked",
             startView: 0, maxViewMode: 0,minViewMode:0
