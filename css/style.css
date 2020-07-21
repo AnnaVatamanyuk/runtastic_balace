@@ -186,25 +186,17 @@ ul{
     color: #03a9f4;
 }
 
-#gender-man:checked~.choose-man:before,
+#gender-man:checked~.choose-man:before{
+    content: url("./../images/user-profile-active.svg");
+}
 #gender-woman:checked~.choose-woman:before{
-    background-color: #03a9f4;
+    content: url("./../images/user-female-active.svg");
 }
 
 
 .choose-man:before{
     position: absolute;
-    content: '';
-    mask: url('./../images/user-profile-svgrepo-com.svg');
-    -webkit-mask: url('./../images/user-profile-svgrepo-com.svg');
-}
-
-
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    ::i-block-chrome, .someclass {
-
-    }
+    content: url('./../images/user-profile-svgrepo-com.svg');
 }
 
 .choose-man:hover,
@@ -212,16 +204,9 @@ ul{
     color: #03a9f4;
 }
 
-.choose-man:hover:before,
-.choose-woman:hover:before{
-    background-color: #03a9f4;
-}
-
 .choose-woman:before{
     position: absolute;
-    content: '';
-    mask: url("./../images/user-female-svgrepo-com.svg");
-    -webkit-mask: url('./../images/user-female-svgrepo-com.svg');
+    content: url("./../images/user-female-svgrepo-com.svg");
 }
 
 .choose-woman:before,
@@ -230,13 +215,10 @@ ul{
     width: 25px;
     top: -6px;
     left: -32px;
-    background-size: 25px;
-    vertical-align: middle;
-    background-color: #757575;
 }
 
 .choose-parameters {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .btn-next{
@@ -1023,6 +1005,9 @@ ul{
     background: #fff;
     padding: 10px;
     box-shadow: 0 0 5px;
+    position: absolute;
+    top: 45px;
+    left: 75%;
 }
 
 .ui-datepicker-prev,
@@ -1188,12 +1173,12 @@ ul{
     padding: 45px 0 0;
 }
 
-/*#magazine .ui-datepicker-trigger {*/
-/*    margin-left: 5px;*/
-/*    position: relative;*/
-/*    top: 3px;*/
-/*    cursor: pointer;*/
-/*}*/
+#magazine .ui-datepicker-trigger {
+    margin-left: 5px;
+    position: relative;
+    top: 3px;
+    cursor: pointer;
+}
 
 .tabs-days_fixed .tabs-list {
     padding: 5px 10px;
